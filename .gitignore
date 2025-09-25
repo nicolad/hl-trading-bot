@@ -1,76 +1,21 @@
+# Build artifacts
+/target
+**/target
+**/*.rlib
+**/*.rmeta
+vendor/
+# Compiled binaries
+*.exe
+*.dll
+*.dylib
+*.so
 
-# Backup files
-# Bot state and cache files
-# Database files
-# Environment and configuration files
-# IDE and editor files
-# Jupyter Notebook
-# OS-specific files
-# Private keys and secrets
-# Profiling data
-# Python-generated files
-# Temporary files
-# Trading data and logs
-# Virtual environments
-# mypy
-# pytest
-*.DS_Store
-*.DS_Store?
-*.bak
-*.csv
-*.db
-*.egg-info
-*.json.backup
-*.key
+# Logs
 *.log
-*.pem
-*.py[oc]
-*.sqlite
-*.sqlite3
-*.sublime-*
-*.swo
-*.swp
-*.tmp
-*_backup.json
-*_state.json
-*~
+
+# Editor/OS files
 .DS_Store
-.Spotlight-V100
-.Trashes
-._*
-.coverage
-.dmypy.json
-.env
-.env.development
-.env.local
-.env.production
-.idea/
-.ipynb_checkpoints
-.mypy_cache/
-.private_key
-.prof
-.pytest_cache/
-.venv/
-.vscode/
-COPY_TRAD_SPEC.md
 Thumbs.db
-__pycache__/
-build/
-cache/
-data/
-dist/
-dmypy.json
-ehthumbs.db
-env/
-htmlcov/
-logs/
-performance_data/
-private_keys/
-secrets/
-state/
-target/
-temp/
-tmp/
-trade_history/
-venv/
-wheels/
+.idea/
+.vscode/
+*.swp

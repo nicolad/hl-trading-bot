@@ -29,3 +29,7 @@ nautilus-model = { git = "https://github.com/nautechsystems/nautilus_trader", pa
 
 [dev-dependencies]
 tempfile = "3"
+
+[patch.crates-io]
+pyo3-stub-gen = { path = "vendor/pyo3-stub-gen" }
+pyo3-stub-gen-derive = { path = "vendor/pyo3-stub-gen-derive" }
