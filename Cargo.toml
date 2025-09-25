@@ -1,0 +1,31 @@
+[package]
+name = "hyperliquid-bot"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde", "clock"] }
+futures = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+thiserror = "2.0"
+tokio = { version = "1.37", features = ["rt-multi-thread", "macros", "signal", "time"] }
+reqwest = { version = "0.12", features = ["json", "gzip", "brotli", "deflate", "rustls-tls"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+url = { version = "2.5", features = ["serde"] }
+uuid = { version = "1.6", features = ["serde", "v4"] }
+
+nautilus-core = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-core", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
+nautilus-trading = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-trading", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
+nautilus-portfolio = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-portfolio", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
+nautilus-risk = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-risk", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
+nautilus-hyperliquid = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-hyperliquid", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
+nautilus-backtest = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-backtest", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9", default-features = false }
+nautilus-model = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-model", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9", features = ["stubs"] }
+
+[dev-dependencies]
+tempfile = "3"
