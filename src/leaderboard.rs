@@ -35,20 +35,21 @@ impl InfoApiClient for ReqwestInfoClient {
     async fn post(&self, body: Value) -> Result<Value> {
         let mut last_err = None;
         for attempt in 0..5u32 {
-            match self
-                .client
-                .post(&self.api_url)
-                .json(&body)
-                .header("content-type", "application/json")
-                .send()
-                .await
-            {
+            match self.client.post(&self.api_url).json(&body).send().await {
                 Ok(response) => {
                     let status = response.status();
-                    if status.is_success() {
-                        return Ok(response.json().await?);
+                    match response.bytes().await {
+                        Ok(bytes) => {
+                            if status.is_success() {
+                                return Ok(serde_json::from_slice(&bytes)?);
+                            }
+                            let text = String::from_utf8_lossy(&bytes);
+                            last_err = Some(anyhow!("http {} body: {}", status, text));
+                        }
+                        Err(err) => {
+                            last_err = Some(anyhow!(err));
+                        }
                     }
-                    last_err = Some(anyhow!("http {}", status));
                 }
                 Err(err) => {
                     last_err = Some(anyhow!(err));
@@ -140,7 +141,11 @@ pub async fn fetch_top_wallets(
         .filter_map(|result| async move { result.ok() })
         .collect::<Vec<WalletResult>>()
         .await;
-    Ok(rank_by_net(results))
+    let mut ranked = rank_by_net(results);
+    if ranked.len() > params.limit_addresses {
+        ranked.truncate(params.limit_addresses);
+    }
+    Ok(ranked)
 }
 
 fn rank_by_net(mut results: Vec<WalletResult>) -> Vec<WalletResult> {
@@ -155,14 +160,26 @@ fn rank_by_net(mut results: Vec<WalletResult>) -> Vec<WalletResult> {
 }
 
 async fn fetch_leaderboard(
-    client: Arc<dyn InfoApiClient>,
+    _client: Arc<dyn InfoApiClient>,
     params: &LeaderboardParams,
 ) -> Result<Vec<Value>> {
-    let response = client.post(json!({"type": "leaderboard"})).await?;
-    let array = response
-        .as_array()
+    let http = Client::builder().user_agent("hl-top-profit/0.1").build()?;
+    let response = http
+        .get("https://stats-data.hyperliquid.xyz/Mainnet/leaderboard")
+        .send()
+        .await?;
+    let status = response.status();
+    let bytes = response.bytes().await?;
+    if !status.is_success() {
+        let text = String::from_utf8_lossy(&bytes);
+        return Err(anyhow!("leaderboard http {} body: {}", status, text));
+    }
+    let payload: Value = serde_json::from_slice(&bytes)?;
+    let rows = payload
+        .get("leaderboardRows")
+        .and_then(|value| value.as_array())
         .ok_or_else(|| anyhow!("unexpected leaderboard response"))?;
-    Ok(array.iter().take(params.limit_addresses).cloned().collect())
+    Ok(rows.iter().take(params.limit_addresses).cloned().collect())
 }
 
 async fn compute_realized_and_net(
@@ -305,7 +322,7 @@ async fn fetch_funding(
 }
 
 fn extract_address(entry: &Value) -> Result<String> {
-    for key in ["address", "user", "wallet"] {
+    for key in ["ethAddress", "address", "user", "wallet"] {
         if let Some(value) = entry.get(key) {
             if let Some(addr) = value.as_str() {
                 if !addr.is_empty() {
