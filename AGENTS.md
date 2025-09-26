@@ -37,7 +37,7 @@ The codebase follows SOLID principles without overcomplicating the implementatio
 │   ├── run_bot.py                # Main bot runner (auto-discovers config)
 │   ├── core/                     # Core engine components
 │   │   ├── engine.py             # Main trading engine
-│   │   ├── enhanced_config.py    # Configuration management
+│   │   ├── config_extension.py    # Configuration management
 │   │   ├── key_manager.py        # Private key management
 │   │   ├── risk_manager.py       # Risk management and exit strategies
 │   │   └── endpoint_router.py    # API endpoint routing

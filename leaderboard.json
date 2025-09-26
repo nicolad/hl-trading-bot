@@ -1,51 +1,51 @@
 [
   {
     "rank": 1,
-    "address": "0x87f9cd15f5050a9283b8896300f7c8cf69ece2cf",
-    "realized_pnl": -11.264447,
-    "net_pnl": -26.78655,
+    "address": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+    "realized_pnl": 107700360.305752,
+    "net_pnl": 107700360.305752,
     "breakdown": {
-      "fills_count": 119,
-      "funding_events": 1,
-      "fees": 15.522103,
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
       "funding": 0.0
     },
     "leaderboard_stat": {
-      "accountValue": "82046677.7947169989",
+      "accountValue": "91942148.8657519966",
       "displayName": null,
-      "ethAddress": "0x87f9cd15f5050a9283b8896300f7c8cf69ece2cf",
+      "ethAddress": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
       "prize": 0,
       "windowPerformances": [
         [
           "day",
           {
-            "pnl": "1272990.5007280002",
-            "roi": "0.0215814479",
-            "vlm": "2474796913.7399992943"
+            "pnl": "4613583.2557420004",
+            "roi": "0.0875910263",
+            "vlm": "691483372.0099999905"
           }
         ],
         [
           "week",
           {
-            "pnl": "8959327.3783689979",
-            "roi": "0.1746489211",
-            "vlm": "12590602260.0599975586"
+            "pnl": "31572230.3126799986",
+            "roi": "0.4428466005",
+            "vlm": "3114031409.5700001717"
           }
         ],
         [
           "month",
           {
-            "pnl": "6522458.6396539994",
-            "roi": "0.0923922927",
-            "vlm": "71445951735.8000030518"
+            "pnl": "20993738.5477409996",
+            "roi": "0.2499137876",
+            "vlm": "14361873893.8500003815"
           }
         ],
         [
           "allTime",
           {
-            "pnl": "2147441.411169",
-            "roi": "0.0269363937",
-            "vlm": "139092727800.1800231934"
+            "pnl": "107700360.3057519943",
+            "roi": "1.0670091839",
+            "vlm": "167411971927.4200134277"
           }
         ]
       ]
@@ -53,17 +53,1473 @@
   },
   {
     "rank": 2,
-    "address": "0x03d1820340bf20ed322a954461bd002ef4f9bfaf",
-    "realized_pnl": -12370.552089400022,
-    "net_pnl": -12674.751203020023,
+    "address": "0x162cc7c861ebd0c06b3d72319201150482518185",
+    "realized_pnl": 57120697.53425,
+    "net_pnl": 57120697.53425,
     "breakdown": {
-      "fills_count": 5228,
-      "funding_events": 496,
-      "fees": 304.19911362000084,
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
       "funding": 0.0
     },
     "leaderboard_stat": {
-      "accountValue": "4586583.1695910003",
+      "accountValue": "75755184.1942500174",
+      "displayName": "ABC",
+      "ethAddress": "0x162cc7c861ebd0c06b3d72319201150482518185",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "1501793.402183",
+            "roi": "0.0344823989",
+            "vlm": "4861653770.6300001144"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "5462770.5923839984",
+            "roi": "0.1297832683",
+            "vlm": "17422810508.6499938965"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "12073328.8304390013",
+            "roi": "0.3398163502",
+            "vlm": "63222371611.6300125122"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "57120697.5342499986",
+            "roi": "1.8800500647",
+            "vlm": "398946160208.5999755859"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 3,
+    "address": "0x03b9a189e2480d1e4c3007080b29f362282130fa",
+    "realized_pnl": 50324607.009210005,
+    "net_pnl": 50324607.009210005,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "48478318.2192100063",
+      "displayName": null,
+      "ethAddress": "0x03b9a189e2480d1e4c3007080b29f362282130fa",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "5648.410376",
+            "roi": "0.0018283651",
+            "vlm": "62576610.8399999961"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "19765.500006",
+            "roi": "0.0064273744",
+            "vlm": "387574569.1700000167"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "22685.961916",
+            "roi": "0.0073840671",
+            "vlm": "1845920144.2300000191"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "50324607.0092100054",
+            "roi": "20.1767160449",
+            "vlm": "59349857193.6100158691"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 4,
+    "address": "0x010461c14e146ac35fe42271bdc1134ee31c703a",
+    "realized_pnl": 44735077.881749,
+    "net_pnl": 44735077.881749,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "149174818.1817489862",
+      "displayName": null,
+      "ethAddress": "0x010461c14e146ac35fe42271bdc1134ee31c703a",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "357624.765874",
+            "roi": "0.0021661406",
+            "vlm": "84484604.7699999958"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "2202134.85885",
+            "roi": "0.0134890794",
+            "vlm": "436934835.3600000143"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "808958.745553",
+            "roi": "0.0040362888",
+            "vlm": "1718323208.8199999332"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "44735077.8817489967",
+            "roi": "0.2858557216",
+            "vlm": "176450176463.6400146484"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 5,
+    "address": "0x2ba553d9f990a3b66b03b2dc0d030dfc1c061036",
+    "realized_pnl": 42786191.964537,
+    "net_pnl": 42786191.964537,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "39108730.924537003",
+      "displayName": null,
+      "ethAddress": "0x2ba553d9f990a3b66b03b2dc0d030dfc1c061036",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "4689.689889",
+            "roi": "0.0001341858",
+            "vlm": "83071877.4599999934"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-2922433.0675189998",
+            "roi": "-0.0732873608",
+            "vlm": "196356248.0300000012"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-292133.646976",
+            "roi": "-0.0061630317",
+            "vlm": "2423203918.9699997902"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "42786191.9645370021",
+            "roi": "3.2123587734",
+            "vlm": "13196782083.5499992371"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 6,
+    "address": "0x31ca8395cf837de08b24da3f660e77761dfb974b",
+    "realized_pnl": 41567062.66891,
+    "net_pnl": 41567062.66891,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "148959126.3589099944",
+      "displayName": null,
+      "ethAddress": "0x31ca8395cf837de08b24da3f660e77761dfb974b",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-247316.624322",
+            "roi": "-0.0015178684",
+            "vlm": "84353544.700000003"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-1644806.1391690001",
+            "roi": "-0.0100089037",
+            "vlm": "474395373.4100000262"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-319530.847182",
+            "roi": "-0.0015921044",
+            "vlm": "1846155469.5299999714"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "41567062.6689099967",
+            "roi": "0.2617398948",
+            "vlm": "172235647419.0300292969"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 7,
+    "address": "0xb8b9e3097c8b1dddf9c5ea9d48a7ebeaf09d67d2",
+    "realized_pnl": 36192013.29346,
+    "net_pnl": 36192013.29346,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "40230629.3661679998",
+      "displayName": "TheWhiteWhale",
+      "ethAddress": "0xb8b9e3097c8b1dddf9c5ea9d48a7ebeaf09d67d2",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-14985155.6790460013",
+            "roi": "-0.2578036418",
+            "vlm": "4046662.1100000003"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-58723707.3890930042",
+            "roi": "-0.5219070327",
+            "vlm": "63173970.1200000048"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-47941652.5277549997",
+            "roi": "-0.3120357995",
+            "vlm": "771713492.8199999332"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "36192013.2934599966",
+            "roi": "0.2495080844",
+            "vlm": "4205826518.029999733"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 8,
+    "address": "0xf517639a8872e756ac98d3c65507d2ebc25cc032",
+    "realized_pnl": 32240599.114509,
+    "net_pnl": 32240599.114509,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "12151960.2345090006",
+      "displayName": "NMTD -Thank you Jeff",
+      "ethAddress": "0xf517639a8872e756ac98d3c65507d2ebc25cc032",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "1489358.102367",
+            "roi": "0.2719696667",
+            "vlm": "98351667.0"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "1147985.2957289999",
+            "roi": "0.1696304853",
+            "vlm": "447144250.3600000143"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1303013.052558",
+            "roi": "0.1970519107",
+            "vlm": "1249452378.3499999046"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "32240599.1145090014",
+            "roi": "43.4028953944",
+            "vlm": "2395645196.3200001717"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 9,
+    "address": "0x023a3d058020fb76cca98f01b3c48c8938a22355",
+    "realized_pnl": 31678972.120732,
+    "net_pnl": 31678972.120732,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "38846509.0607319996",
+      "displayName": "Auros",
+      "ethAddress": "0x023a3d058020fb76cca98f01b3c48c8938a22355",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "2095627.912031",
+            "roi": "0.0648140169",
+            "vlm": "657500759.0399999619"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "71203.584069",
+            "roi": "0.001500958",
+            "vlm": "3389820934.1399998665"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-2252817.1314130002",
+            "roi": "-0.0452711288",
+            "vlm": "12048581745.6499996185"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "31678972.1207319982",
+            "roi": "1.6759474654",
+            "vlm": "186943456727.5199890137"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 10,
+    "address": "0x8bff50aad8b4e06c5e148eaeb9d7aef69e26cdc3",
+    "realized_pnl": 25801732.716673,
+    "net_pnl": 25801732.716673,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "11573361.956673",
+      "displayName": null,
+      "ethAddress": "0x8bff50aad8b4e06c5e148eaeb9d7aef69e26cdc3",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "1796921.292967",
+            "roi": "0.2386786584",
+            "vlm": "669165.6800000001"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "7954231.9397219997",
+            "roi": "0.9501775797",
+            "vlm": "669165.6800000001"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "3264353.9693",
+            "roi": "0.2499277822",
+            "vlm": "898025874.9900000095"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "25801732.7166730016",
+            "roi": "15.0274425447",
+            "vlm": "17347918235.4799995422"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 11,
+    "address": "0xdcac85ecae7148886029c20e661d848a4de99ce2",
+    "realized_pnl": 24624011.377295,
+    "net_pnl": 24624011.377295,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "19163427.2672950029",
+      "displayName": null,
+      "ethAddress": "0xdcac85ecae7148886029c20e661d848a4de99ce2",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "48756.233654",
+            "roi": "0.0066823862",
+            "vlm": "95632203.0"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "2725349.1255500005",
+            "roi": "0.110904651",
+            "vlm": "381365474.7400000095"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "2893216.3199169999",
+            "roi": "0.1027642359",
+            "vlm": "1618835587.779999733"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "24624011.3772949986",
+            "roi": "1.1055266568",
+            "vlm": "24088248358.0099983215"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 12,
+    "address": "0xff4cd3826ecee12acd4329aada4a2d3419fc463c",
+    "realized_pnl": 24241010.314442996,
+    "net_pnl": 24241010.314442996,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "31663819.2844429985",
+      "displayName": null,
+      "ethAddress": "0xff4cd3826ecee12acd4329aada4a2d3419fc463c",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-881863.3441",
+            "roi": "-0.035099454",
+            "vlm": "1100519635.1600000858"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-500231.2262859999",
+            "roi": "-0.020217023",
+            "vlm": "4238799628.509999752"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-1467911.434467",
+            "roi": "-0.0566526015",
+            "vlm": "16337437734.4199962616"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "24241010.3144429959",
+            "roi": "0.702219324",
+            "vlm": "146781249782.7299804688"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 13,
+    "address": "0x1d52fe9bde2694f6172192381111a91e24304397",
+    "realized_pnl": 21925881.357246,
+    "net_pnl": 21925881.357246,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "16813854.1381650008",
+      "displayName": "im washed af -0xtyle",
+      "ethAddress": "0x1d52fe9bde2694f6172192381111a91e24304397",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-18175467.9245200008",
+            "roi": "-0.5194972449",
+            "vlm": "108391387.2300000042"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-23106685.0191529989",
+            "roi": "-0.578855713",
+            "vlm": "366098307.6999999881"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "3708218.7672720002",
+            "roi": "0.2387890948",
+            "vlm": "670020385.6799999475"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "21925881.3572460003",
+            "roi": "9.4610749872",
+            "vlm": "6611916640.1899995804"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 14,
+    "address": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+    "realized_pnl": 20407889.242081,
+    "net_pnl": 20407889.242081,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "43457284.1520809978",
+      "displayName": "BobbyBigSize",
+      "ethAddress": "0x7fdafde5cfb5465924316eced2d3715494c517d1",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "6217203.7082380001",
+            "roi": "0.2213152962",
+            "vlm": "78850276.4099999964"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "31711377.1503890008",
+            "roi": "0.7357988044",
+            "vlm": "254656365.9499999881"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-5159094.2642519996",
+            "roi": "-0.0620319319",
+            "vlm": "803186369.1100000143"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "20407889.2420810014",
+            "roi": "0.3485587912",
+            "vlm": "7236033324.3800001144"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 15,
+    "address": "0x044d0932b02f5045bc00e0a6818b7f98ef504681",
+    "realized_pnl": 19810134.0662,
+    "net_pnl": 19810134.0662,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "19667290.6727680005",
+      "displayName": null,
+      "ethAddress": "0x044d0932b02f5045bc00e0a6818b7f98ef504681",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-1752924.4718619999",
+            "roi": "-0.0835176517",
+            "vlm": "47985681.8699999973"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-6279912.8808610002",
+            "roi": "-0.2461199573",
+            "vlm": "383136533.9800000191"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-4171358.2182439999",
+            "roi": "-0.166846448",
+            "vlm": "1713850158.9400000572"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "19810134.0661999993",
+            "roi": "19.4276321591",
+            "vlm": "6660368983.8900003433"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 16,
+    "address": "0x100f4a6d8713e0df271f25323f9d9399496ff179",
+    "realized_pnl": 13664994.623698,
+    "net_pnl": 13664994.623698,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "1512358.1236979999",
+      "displayName": null,
+      "ethAddress": "0x100f4a6d8713e0df271f25323f9d9399496ff179",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "38076.974666",
+            "roi": "0.0258338097",
+            "vlm": "70505284.6200000048"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "11897.199264",
+            "roi": "0.0033953535",
+            "vlm": "277198895.3100000024"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "667841.190923",
+            "roi": "0.2344930861",
+            "vlm": "752506247.6699999571"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "13664994.6236979999",
+            "roi": "11.7433648927",
+            "vlm": "8619212592.8500003815"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 17,
+    "address": "0xe4c6ae25959d7fc66cf2dd5965fb78c5e09c4048",
+    "realized_pnl": 13174697.085478002,
+    "net_pnl": 13174697.085478002,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "2433064.1554779997",
+      "displayName": null,
+      "ethAddress": "0xe4c6ae25959d7fc66cf2dd5965fb78c5e09c4048",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "189109.498843",
+            "roi": "0.1070001906",
+            "vlm": "384720994.1000000238"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "507619.23571",
+            "roi": "0.334872317",
+            "vlm": "1428703749.1900002956"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "366113.6602090001",
+            "roi": "0.1909488851",
+            "vlm": "5066718354.9099998474"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "13174697.0854780022",
+            "roi": "4.1746511614",
+            "vlm": "70883287364.7400054932"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 18,
+    "address": "0x9e8b1e51c642f4c8b87c6ba11c53d516a218afc4",
+    "realized_pnl": 13170388.022961,
+    "net_pnl": 13170388.022961,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4435810.6129609998",
+      "displayName": null,
+      "ethAddress": "0x9e8b1e51c642f4c8b87c6ba11c53d516a218afc4",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "0.0",
+            "roi": "0.0",
+            "vlm": "0.0"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-1822948.048866",
+            "roi": "-0.2932636578",
+            "vlm": "156813431.7100000083"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-2896678.5497189998",
+            "roi": "-0.3973602991",
+            "vlm": "1444551721.9900000095"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "13170388.022961",
+            "roi": "38.1964321783",
+            "vlm": "5884159683.0699996948"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 19,
+    "address": "0x7fe8cfe481ec2f702692a9152e3f002f3e417ac6",
+    "realized_pnl": 12776701.350997,
+    "net_pnl": 12776701.350997,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4738229.350997",
+      "displayName": null,
+      "ethAddress": "0x7fe8cfe481ec2f702692a9152e3f002f3e417ac6",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "687767.349061",
+            "roi": "0.1746100253",
+            "vlm": "53514866.700000003"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-362403.191167",
+            "roi": "-0.0488472835",
+            "vlm": "929987986.2999999523"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-1467846.1459570001",
+            "roi": "-0.1721904694",
+            "vlm": "2889180189.4000000954"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "12776701.3509969991",
+            "roi": "3.0948750255",
+            "vlm": "8302497727.6700000763"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 20,
+    "address": "0x0b5488eadf81e259963a748f4455844fe621c2d5",
+    "realized_pnl": 12196523.723569999,
+    "net_pnl": 12196523.723569999,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "20225593.5035700016",
+      "displayName": null,
+      "ethAddress": "0x0b5488eadf81e259963a748f4455844fe621c2d5",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "11614238.1401540004",
+            "roi": "1.3486963182",
+            "vlm": "198827170.9199999869"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "16789812.1815560013",
+            "roi": "4.8866100479",
+            "vlm": "706271155.8799999952"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "12441556.4139590003",
+            "roi": "1.598321853",
+            "vlm": "2468959058.3299999237"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "12196523.7235699985",
+            "roi": "1.5179828297",
+            "vlm": "4052087662.9499998093"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 21,
+    "address": "0x020ca66c30bec2c4fe3861a94e4db4a498a35872",
+    "realized_pnl": 11838457.990519,
+    "net_pnl": 11838457.990519,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "19600952.5204350017",
+      "displayName": "MachiBigBrother",
+      "ethAddress": "0x020ca66c30bec2c4fe3861a94e4db4a498a35872",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-8623425.9686900005",
+            "roi": "-0.3592998237",
+            "vlm": "53289760.5200000033"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-32598610.5947920009",
+            "roi": "-0.6794799335",
+            "vlm": "273416553.3199999928"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-24369308.1963320002",
+            "roi": "-0.6131179889",
+            "vlm": "1763346424.6300001144"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "11838457.9905190002",
+            "roi": "0.9542593594",
+            "vlm": "5177089522.0900001526"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 22,
+    "address": "0xe357fa9fecb084f0303ff341b0bc55c89f2bb5ce",
+    "realized_pnl": 11196204.097765,
+    "net_pnl": 11196204.097765,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "33460462.3277649991",
+      "displayName": null,
+      "ethAddress": "0xe357fa9fecb084f0303ff341b0bc55c89f2bb5ce",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "563801.055049",
+            "roi": "0.0229384224",
+            "vlm": "523829573.9900000095"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-323868.168774",
+            "roi": "-0.0102924872",
+            "vlm": "2552548441.4600000381"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1126931.6351109999",
+            "roi": "0.0375447853",
+            "vlm": "11288123050.1200008392"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "11196204.0977650005",
+            "roi": "0.3491805784",
+            "vlm": "57837851781.0299987793"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 23,
+    "address": "0x3bcae23e8c380dab4732e9a159c0456f12d866f3",
+    "realized_pnl": 10525110.878558,
+    "net_pnl": 10525110.878558,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4875599.778558",
+      "displayName": null,
+      "ethAddress": "0x3bcae23e8c380dab4732e9a159c0456f12d866f3",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "233721.880757",
+            "roi": "0.0503592871",
+            "vlm": "64504012.2700000033"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "304781.3662",
+            "roi": "0.0666913495",
+            "vlm": "108173981.4599999934"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1313896.436797",
+            "roi": "0.3688955285",
+            "vlm": "954794382.7599999905"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "10525110.8785580005",
+            "roi": "21.0679683161",
+            "vlm": "14646403275.3099994659"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 24,
+    "address": "0x89c645ecbd07825b194e3b98300eb3497aaba406",
+    "realized_pnl": 10123053.147930004,
+    "net_pnl": 10123053.147930004,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "8168501.6179300025",
+      "displayName": null,
+      "ethAddress": "0x89c645ecbd07825b194e3b98300eb3497aaba406",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-2863.804265",
+            "roi": "-0.0033801769",
+            "vlm": "672380484.2599999905"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "59735.027272",
+            "roi": "0.0733272439",
+            "vlm": "2622786023.8200001717"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "76557.470733",
+            "roi": "0.0758735772",
+            "vlm": "11034191132.8300018311"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "10123053.1479300037",
+            "roi": "3.0194508275",
+            "vlm": "109078642296.1699981689"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 25,
+    "address": "0xad8be12a452b5b8f9ad9883f6e8e67536627db4b",
+    "realized_pnl": 9809881.846085,
+    "net_pnl": 9809881.846085,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "1143623.5260849998",
+      "displayName": null,
+      "ethAddress": "0xad8be12a452b5b8f9ad9883f6e8e67536627db4b",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "2006.516828",
+            "roi": "0.0017588626",
+            "vlm": "519637641.2799999714"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-719.813761",
+            "roi": "-0.0006294665",
+            "vlm": "2068704829.2699997425"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "107799.369371",
+            "roi": "0.0669598417",
+            "vlm": "9831212571.5799999237"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "9809881.8460850008",
+            "roi": "29.8135591955",
+            "vlm": "124739016721.129989624"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 26,
+    "address": "0xbf732ea04197942783e34730ed6e0f6099575d58",
+    "realized_pnl": 9450454.747197,
+    "net_pnl": 9450454.747197,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "675224.257197",
+      "displayName": null,
+      "ethAddress": "0xbf732ea04197942783e34730ed6e0f6099575d58",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "220235.079469",
+            "roi": "0.4361056505",
+            "vlm": "14722384.0399999991"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-91021.965729",
+            "roi": "-0.0872824912",
+            "vlm": "135642417.849999994"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1026622.565051",
+            "roi": "0.2888773365",
+            "vlm": "800129780.9299999475"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "9450454.7471970003",
+            "roi": "2.1553630645",
+            "vlm": "6017156786.1599998474"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 27,
+    "address": "0x2025137a136bea7446deba681cbfc7cf1970840e",
+    "realized_pnl": 8745176.238301,
+    "net_pnl": 8745176.238301,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "6344774.3983009998",
+      "displayName": null,
+      "ethAddress": "0x2025137a136bea7446deba681cbfc7cf1970840e",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "93491.098519",
+            "roi": "0.016236506",
+            "vlm": "70897554.9200000018"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "1602076.9588929999",
+            "roi": "0.2991656522",
+            "vlm": "408474187.719999969"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "3921310.596566",
+            "roi": "0.9238017475",
+            "vlm": "924677176.5800000429"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "8745176.2383009996",
+            "roi": "2.4745946692",
+            "vlm": "6823955100.779999733"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 28,
+    "address": "0x2f7a83314829ea002450381ad181fd525bdb340d",
+    "realized_pnl": 8602367.112870999,
+    "net_pnl": 8602367.112870999,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "3036158.4528709999",
+      "displayName": null,
+      "ethAddress": "0x2f7a83314829ea002450381ad181fd525bdb340d",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "34821.574205",
+            "roi": "0.0137905625",
+            "vlm": "92626786.1099999994"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-158241.751726",
+            "roi": "-0.0582179397",
+            "vlm": "418366825.9900000095"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-102276.296221",
+            "roi": "-0.0384190124",
+            "vlm": "1165123009.6600000858"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "8602367.1128709987",
+            "roi": "1.4713250044",
+            "vlm": "73860570180.5699920654"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 29,
+    "address": "0x8d0e342e0524392d035fb37461c6f5813ff59244",
+    "realized_pnl": 8499652.197288,
+    "net_pnl": 8499652.197288,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "10278997.8472879995",
+      "displayName": null,
+      "ethAddress": "0x8d0e342e0524392d035fb37461c6f5813ff59244",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "1553501.8713450001",
+            "roi": "0.1774647824",
+            "vlm": "152862942.0800000131"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "1508162.852616",
+            "roi": "0.1713977418",
+            "vlm": "477897530.2699999809"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "2092681.3703020001",
+            "roi": "0.2517934364",
+            "vlm": "2451853708.4299998283"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "8499652.1972879991",
+            "roi": "0.9168414539",
+            "vlm": "5644282250.6199998856"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 30,
+    "address": "0x03d1820340bf20ed322a954461bd002ef4f9bfaf",
+    "realized_pnl": 7982287.519385001,
+    "net_pnl": 7982287.519385001,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4470106.4695730004",
       "displayName": null,
       "ethAddress": "0x03d1820340bf20ed322a954461bd002ef4f9bfaf",
       "prize": 0,
@@ -71,33 +1527,2009 @@
         [
           "day",
           {
-            "pnl": "-2495.480356",
-            "roi": "-0.0004204007",
-            "vlm": "37235873.909999989"
+            "pnl": "-115342.926814",
+            "roi": "-0.0194461309",
+            "vlm": "40149188.4900000021"
           }
         ],
         [
           "week",
           {
-            "pnl": "-68297.664291",
-            "roi": "-0.0113796095",
-            "vlm": "157897220.6499999762"
+            "pnl": "-125764.485702",
+            "roi": "-0.0211659549",
+            "vlm": "163068625.1099999845"
           }
         ],
         [
           "month",
           {
-            "pnl": "2532070.8015510002",
-            "roi": "0.3095625616",
-            "vlm": "879109152.930000186"
+            "pnl": "2190852.9615069996",
+            "roi": "0.2701384478",
+            "vlm": "832161401.6699999571"
           }
         ],
         [
           "allTime",
           {
-            "pnl": "8099683.4797100006",
-            "roi": "1.0934393165",
-            "vlm": "7211593743.8500003815"
+            "pnl": "7982287.5193850007",
+            "roi": "1.0775911221",
+            "vlm": "7221302399.7700004578"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 31,
+    "address": "0x53babe76166eae33c861aeddf9ce89af20311cd0",
+    "realized_pnl": 7692478.576909,
+    "net_pnl": 7692478.576909,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "10943319.7969090007",
+      "displayName": "jeff lover",
+      "ethAddress": "0x53babe76166eae33c861aeddf9ce89af20311cd0",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-3143788.493553",
+            "roi": "-0.2510683644",
+            "vlm": "1045287281.810000062"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-7507693.0301650008",
+            "roi": "-0.3371316383",
+            "vlm": "2436014032.5599999428"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-3667165.3048470002",
+            "roi": "-0.159020913",
+            "vlm": "6050631535.0"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "7692478.5769090001",
+            "roi": "0.2637613343",
+            "vlm": "27900645027.7799987793"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 32,
+    "address": "0x469e9a7f624b04c24f0e64edf8d8a277e6bf58a5",
+    "realized_pnl": 7303301.912617,
+    "net_pnl": 7303301.912617,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "8309956.6226169998",
+      "displayName": null,
+      "ethAddress": "0x469e9a7f624b04c24f0e64edf8d8a277e6bf58a5",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "249156.583009",
+            "roi": "0.0336389235",
+            "vlm": "46305759.75"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "1294656.035932",
+            "roi": "0.2035208379",
+            "vlm": "132749491.8299999982"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "3169852.342429",
+            "roi": "0.5763217884",
+            "vlm": "1130703974.1900000572"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "7303301.9126169998",
+            "roi": "2.4233378007",
+            "vlm": "3915176532.6599998474"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 33,
+    "address": "0x31dea2516beee92135b96f464eeec3cf292a13f2",
+    "realized_pnl": 7301559.366628,
+    "net_pnl": 7301559.366628,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "13544518.5666279998",
+      "displayName": null,
+      "ethAddress": "0x31dea2516beee92135b96f464eeec3cf292a13f2",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "150896.350882",
+            "roi": "0.0121835065",
+            "vlm": "94450645.2399999946"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "2089884.774035",
+            "roi": "0.2000596369",
+            "vlm": "439926803.0099999905"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "2096409.155913",
+            "roi": "0.1715445664",
+            "vlm": "1313232039.5599999428"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "7301559.3666279996",
+            "roi": "0.8584761229",
+            "vlm": "16083330242.6000003815"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 34,
+    "address": "0x2c4ebdcd592a74b4022ad9d1fb00ab6976abe483",
+    "realized_pnl": 7231125.173912,
+    "net_pnl": 7231125.173912,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "3203916.9539120002",
+      "displayName": "pango",
+      "ethAddress": "0x2c4ebdcd592a74b4022ad9d1fb00ab6976abe483",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "384295.164091",
+            "roi": "0.4498479134",
+            "vlm": "129472595.2800000012"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "5908.979929",
+            "roi": "0.0047936657",
+            "vlm": "427788563.9100000262"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "271125.699639",
+            "roi": "0.2802485064",
+            "vlm": "1460256998.2100000381"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "7231125.1739119999",
+            "roi": "86.452826243",
+            "vlm": "5374459837.3699998856"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 35,
+    "address": "0xdf9ea6ec3b7109935ccb4fb267e15ac1fb077ab1",
+    "realized_pnl": 7201319.049295002,
+    "net_pnl": 7201319.049295002,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "5119471.8092949986",
+      "displayName": null,
+      "ethAddress": "0xdf9ea6ec3b7109935ccb4fb267e15ac1fb077ab1",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "39114.637066",
+            "roi": "0.0155237283",
+            "vlm": "853964721.7999999523"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "215723.4921430001",
+            "roi": "0.0883574104",
+            "vlm": "3075102922.0499997139"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "240174.0218010001",
+            "roi": "0.043251465",
+            "vlm": "14422424322.9599990845"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "7201319.0492950017",
+            "roi": "1.214982097",
+            "vlm": "109998694876.3000030518"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 36,
+    "address": "0x81196517de1d77ebc8a1951c3ea1a103e732479c",
+    "realized_pnl": 6537686.340420998,
+    "net_pnl": 6537686.340420998,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "8818716.541824",
+      "displayName": "infinitefield.xyz",
+      "ethAddress": "0x81196517de1d77ebc8a1951c3ea1a103e732479c",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-63822.489263",
+            "roi": "-0.0419304153",
+            "vlm": "155138539.9499999881"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-383188.405341",
+            "roi": "-0.2023735503",
+            "vlm": "478372977.9099999666"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-150521.941097",
+            "roi": "-0.0588901987",
+            "vlm": "1839829840.9100000858"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "6537686.3404209977",
+            "roi": "2.1148377443",
+            "vlm": "147647760665.1800231934"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 37,
+    "address": "0x856c35038594767646266bc7fd68dc26480e910d",
+    "realized_pnl": 6253341.797911998,
+    "net_pnl": 6253341.797911998,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "32485076.6676680036",
+      "displayName": null,
+      "ethAddress": "0x856c35038594767646266bc7fd68dc26480e910d",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "2461121.0769189997",
+            "roi": "0.1066587774",
+            "vlm": "98978727.7299999893"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "4088542.6620569993",
+            "roi": "0.1862044317",
+            "vlm": "443529316.219999969"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "2124584.1511929999",
+            "roi": "0.0852522815",
+            "vlm": "1427971452.6100001335"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "6253341.7979119979",
+            "roi": "0.2378337874",
+            "vlm": "11481417812.4399986267"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 38,
+    "address": "0x24fb6523036ebcb3cc51deff138066dccf6bed0f",
+    "realized_pnl": 5997433.568782,
+    "net_pnl": 5997433.568782,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "5541542.938782",
+      "displayName": null,
+      "ethAddress": "0x24fb6523036ebcb3cc51deff138066dccf6bed0f",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "377072.604947",
+            "roi": "0.0706994918",
+            "vlm": "65218937.4399999976"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "583017.1126849999",
+            "roi": "0.1770471561",
+            "vlm": "238439172.3300000131"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1061654.652005",
+            "roi": "0.1602357989",
+            "vlm": "704961546.4600000381"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "5997433.5687819999",
+            "roi": "3.1078473363",
+            "vlm": "4254968983.4000000954"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 39,
+    "address": "0xe220cc6cc750c14e3340a74a6fff7d63e8e43d7b",
+    "realized_pnl": 4929983.685974999,
+    "net_pnl": 4929983.685974999,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "6253305.8559749993",
+      "displayName": null,
+      "ethAddress": "0xe220cc6cc750c14e3340a74a6fff7d63e8e43d7b",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-155529.03198",
+            "roi": "-0.0241007731",
+            "vlm": "121200882.6000000089"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "882648.8974080002",
+            "roi": "0.14658847",
+            "vlm": "386122760.7799999714"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "640176.9822219999",
+            "roi": "0.100465432",
+            "vlm": "1054118714.4700000286"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "4929983.6859749993",
+            "roi": "1.2542884235",
+            "vlm": "12714359118.8899993896"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 40,
+    "address": "0xefd3ab65915e35105caa462442c9ecc1346728df",
+    "realized_pnl": 4794629.337486001,
+    "net_pnl": 4794629.337486001,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "19556031.4281009957",
+      "displayName": "2 frères 2 fauves",
+      "ethAddress": "0xefd3ab65915e35105caa462442c9ecc1346728df",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "741111.374418",
+            "roi": "0.1002078756",
+            "vlm": "160179168.4099999964"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "4004910.0910470001",
+            "roi": "0.8651038659",
+            "vlm": "644750569.3600000143"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "4807846.9851839999",
+            "roi": "0.6389017953",
+            "vlm": "2962599177.5300002098"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "4794629.3374860007",
+            "roi": "0.628372671",
+            "vlm": "10760851119.5699996948"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 41,
+    "address": "0x88b6addc407b2b809443aea0cf54221c6149b5c0",
+    "realized_pnl": 4746845.111024,
+    "net_pnl": 4746845.111024,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "20538761.0710240006",
+      "displayName": null,
+      "ethAddress": "0x88b6addc407b2b809443aea0cf54221c6149b5c0",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-1612651.0075389999",
+            "roi": "-0.0728012734",
+            "vlm": "125191724.0300000012"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "112220.760398",
+            "roi": "0.0052105885",
+            "vlm": "664726479.9299999475"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-338211.062223",
+            "roi": "-0.0154261741",
+            "vlm": "1842092429.8900001049"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "4746845.1110239998",
+            "roi": "0.2708263922",
+            "vlm": "3992970924.2300000191"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 42,
+    "address": "0xc926ddba8b7617dbc65712f20cf8e1b58b8598d3",
+    "realized_pnl": 4508454.105225,
+    "net_pnl": 4508454.105225,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "11101091.9652249999",
+      "displayName": null,
+      "ethAddress": "0xc926ddba8b7617dbc65712f20cf8e1b58b8598d3",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "445739.174603",
+            "roi": "0.0785019209",
+            "vlm": "42108019.5099999979"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "878275.278328",
+            "roi": "0.1674330545",
+            "vlm": "294977592.7099999785"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1318294.0573519999",
+            "roi": "0.2329957368",
+            "vlm": "1285141648.3600001335"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "4508454.1052249996",
+            "roi": "0.6838515653",
+            "vlm": "9895534704.2299995422"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 43,
+    "address": "0xff8850989681b1163cbaf0b0f6b719c1c663dc25",
+    "realized_pnl": 4278380.37077,
+    "net_pnl": 4278380.37077,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "5489561.5307700019",
+      "displayName": null,
+      "ethAddress": "0xff8850989681b1163cbaf0b0f6b719c1c663dc25",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "791363.434365",
+            "roi": "0.1413661841",
+            "vlm": "60602567.6399999857"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "3933906.5350900004",
+            "roi": "0.7162091473",
+            "vlm": "278540984.4000000358"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1979813.5643929997",
+            "roi": "0.2593582962",
+            "vlm": "1303249306.2899999619"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "4278380.3707699999",
+            "roi": "0.5522016279",
+            "vlm": "21360175386.1299972534"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 44,
+    "address": "0x960bb18454cd67b5a3edb4fa802b7c0b5b10e2ee",
+    "realized_pnl": 4267665.377138,
+    "net_pnl": 4267665.377138,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4245368.9871380003",
+      "displayName": null,
+      "ethAddress": "0x960bb18454cd67b5a3edb4fa802b7c0b5b10e2ee",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-1554608.2442739999",
+            "roi": "-0.2909408967",
+            "vlm": "309231716.2599999905"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-1529891.678513",
+            "roi": "-0.1730115693",
+            "vlm": "742216064.3400000334"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "426382.134535",
+            "roi": "0.043882143",
+            "vlm": "1847820754.4100000858"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "4267665.377138",
+            "roi": "0.7263806868",
+            "vlm": "2769231832.1399998665"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 45,
+    "address": "0x8e80c4b533dd977cf716b5c24fd9223129272804",
+    "realized_pnl": 3943345.48523,
+    "net_pnl": 3943345.48523,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "2544445.49523",
+      "displayName": null,
+      "ethAddress": "0x8e80c4b533dd977cf716b5c24fd9223129272804",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-104415.489968",
+            "roi": "-0.0405816969",
+            "vlm": "198977433.5900000036"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-177089.729424",
+            "roi": "-0.0669048045",
+            "vlm": "1130344752.5200002193"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-259125.192544",
+            "roi": "-0.0932596426",
+            "vlm": "5465271417.25"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "3943345.4852300002",
+            "roi": "18.5241824651",
+            "vlm": "61770144243.9300003052"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 46,
+    "address": "0xe86b057f5eb764c9738d6b0d38170befd0723664",
+    "realized_pnl": 3801781.090076,
+    "net_pnl": 3801781.090076,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "19681226.1100759991",
+      "displayName": null,
+      "ethAddress": "0xe86b057f5eb764c9738d6b0d38170befd0723664",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "771674.2337270001",
+            "roi": "0.0644797833",
+            "vlm": "107343435.8200000077"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "6082135.224115001",
+            "roi": "0.3597378503",
+            "vlm": "441330950.75"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "4596933.8328739991",
+            "roi": "0.159425929",
+            "vlm": "1993818256.5199999809"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "3801781.090076",
+            "roi": "0.1013501753",
+            "vlm": "35551359059.2999954224"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 47,
+    "address": "0xa31981ba7aca4c3d1e3594fb5bfe295e1f611314",
+    "realized_pnl": 3383414.53,
+    "net_pnl": 3383414.53,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "0.0",
+      "displayName": null,
+      "ethAddress": "0xa31981ba7aca4c3d1e3594fb5bfe295e1f611314",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "3310644.1001539999",
+            "roi": "3.6204819401",
+            "vlm": "532604932.6000000238"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "3785769.4700000002",
+            "roi": "8.6178206121",
+            "vlm": "693905729.4700000286"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "3383414.5299999998",
+            "roi": "4.0199761445",
+            "vlm": "719006757.7999999523"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "3383414.5299999998",
+            "roi": "4.0199761445",
+            "vlm": "719006757.7999999523"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 48,
+    "address": "0xc5ed4501500fcbfb2b88fb7f0aa52f834ed44346",
+    "realized_pnl": 3343785.108741,
+    "net_pnl": 3343785.108741,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "1805081.7087409999",
+      "displayName": null,
+      "ethAddress": "0xc5ed4501500fcbfb2b88fb7f0aa52f834ed44346",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "43401.940509",
+            "roi": "0.0457395543",
+            "vlm": "65122022.4899999946"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-177633.5106890001",
+            "roi": "-0.1518328051",
+            "vlm": "256488616.6899999976"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "33577.999035",
+            "roi": "0.0144632621",
+            "vlm": "1245088118.8900001049"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "3343785.1087409998",
+            "roi": "2.1962417915",
+            "vlm": "13033616230.9700012207"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 49,
+    "address": "0x363db8a8387d59b4b53e473fc9c12fbf7994f0ef",
+    "realized_pnl": 3162760.325217,
+    "net_pnl": 3162760.325217,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "13552598.9552170001",
+      "displayName": "tummster reborn",
+      "ethAddress": "0x363db8a8387d59b4b53e473fc9c12fbf7994f0ef",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "2253232.7029180001",
+            "roi": "0.0684926523",
+            "vlm": "127426844.1899999976"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-1209405.8634299999",
+            "roi": "-0.0332619185",
+            "vlm": "221184879.9199999869"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "3162760.3252170002",
+            "roi": "0.0988736183",
+            "vlm": "795499347.7100000381"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "3162760.3252170002",
+            "roi": "0.0988736183",
+            "vlm": "795499347.7100000381"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 50,
+    "address": "0x7839e2f2c375dd2935193f2736167514efff9916",
+    "realized_pnl": 2829351.9630590007,
+    "net_pnl": 2829351.9630590007,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "2765474.1927410001",
+      "displayName": null,
+      "ethAddress": "0x7839e2f2c375dd2935193f2736167514efff9916",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "205712.510777",
+            "roi": "0.1216223001",
+            "vlm": "975794603.1800000668"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "717568.3490540002",
+            "roi": "0.4618898315",
+            "vlm": "3336041702.430000782"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "838193.7459250002",
+            "roi": "0.5187088658",
+            "vlm": "15964316482.25"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "2829351.9630590007",
+            "roi": "3.1738319018",
+            "vlm": "51517405205.25"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 51,
+    "address": "0x87f9cd15f5050a9283b8896300f7c8cf69ece2cf",
+    "realized_pnl": 2640042.439576,
+    "net_pnl": 2640042.439576,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "82922252.3918980062",
+      "displayName": null,
+      "ethAddress": "0x87f9cd15f5050a9283b8896300f7c8cf69ece2cf",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "1577602.288554",
+            "roi": "0.026660668",
+            "vlm": "3612888229.0800008774"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "9422428.7177940011",
+            "roi": "0.1835708382",
+            "vlm": "13438275415.4400005341"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "8595614.6351970006",
+            "roi": "0.132831664",
+            "vlm": "69510615417.4299926758"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "2640042.439576",
+            "roi": "0.0331153261",
+            "vlm": "140681151150.7199707031"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 52,
+    "address": "0x06a3481efd4c3e14611fb4679ba101e337db05f9",
+    "realized_pnl": 2589937.976041,
+    "net_pnl": 2589937.976041,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "1785304.846041",
+      "displayName": null,
+      "ethAddress": "0x06a3481efd4c3e14611fb4679ba101e337db05f9",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "268621.666714",
+            "roi": "0.1770995828",
+            "vlm": "40971735.9699999988"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-573574.1547130001",
+            "roi": "-0.243145088",
+            "vlm": "241354440.3199999928"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-1404300.8285419999",
+            "roi": "-0.4402603173",
+            "vlm": "738567290.5599999428"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "2589937.9760409999",
+            "roi": "9.2031265775",
+            "vlm": "3411890140.8400001526"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 53,
+    "address": "0x34365f472a3af2ff8167970a519931437e2c2094",
+    "realized_pnl": 2443249.153065,
+    "net_pnl": 2443249.153065,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4968280.9400880001",
+      "displayName": null,
+      "ethAddress": "0x34365f472a3af2ff8167970a519931437e2c2094",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "2877096.3757150001",
+            "roi": "1.3758213525",
+            "vlm": "129726649.8900000006"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-1119497.8330260001",
+            "roi": "-0.1843516925",
+            "vlm": "573946288.1699999571"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-1507651.8251139999",
+            "roi": "-0.2289705649",
+            "vlm": "1847410923.9100000858"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "2443249.1530650002",
+            "roi": "0.5576009343",
+            "vlm": "3841235639.2199997902"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 54,
+    "address": "0x399965e15d4e61ec3529cc98b7f7ebb93b733336",
+    "realized_pnl": 2066795.362924,
+    "net_pnl": 2066795.362924,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "2316890.5225580004",
+      "displayName": null,
+      "ethAddress": "0x399965e15d4e61ec3529cc98b7f7ebb93b733336",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "63439.373906",
+            "roi": "0.0886087793",
+            "vlm": "331270991.4300000668"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "120298.259189",
+            "roi": "0.1819695109",
+            "vlm": "977406658.5099999905"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "183005.239808",
+            "roi": "0.1909420869",
+            "vlm": "2308272973.9800000191"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "2066795.362924",
+            "roi": "1.1942221929",
+            "vlm": "21840767381.8999977112"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 55,
+    "address": "0xb28cf8649d1cda2975d290f04ea4cc4db7b3828e",
+    "realized_pnl": 2047527.063162,
+    "net_pnl": 2047527.063162,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4583328.933162",
+      "displayName": null,
+      "ethAddress": "0xb28cf8649d1cda2975d290f04ea4cc4db7b3828e",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-989536.256712",
+            "roi": "-0.2738858699",
+            "vlm": "37571893.6899999976"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-5769358.6149000004",
+            "roi": "-0.6874197951",
+            "vlm": "171354062.4799999893"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-3075328.7061089999",
+            "roi": "-0.5396503064",
+            "vlm": "1021901850.3799999952"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "2047527.0631619999",
+            "roi": "0.6421413433",
+            "vlm": "4682009887.2600002289"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 56,
+    "address": "0xeeb56331b6a250fe2dbc123f08bdb87aa9840464",
+    "realized_pnl": 2033928.8366089999,
+    "net_pnl": 2033928.8366089999,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "10117825.3166090008",
+      "displayName": null,
+      "ethAddress": "0xeeb56331b6a250fe2dbc123f08bdb87aa9840464",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "53515.598432",
+            "roi": "0.0054444002",
+            "vlm": "116586967.5500000119"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "716134.6969959999",
+            "roi": "0.0740324774",
+            "vlm": "496508622.6899999976"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1415436.5617849999",
+            "roi": "0.1535476156",
+            "vlm": "1295598773.8000001907"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "2033928.8366089999",
+            "roi": "0.1258752123",
+            "vlm": "3549078871.2899999619"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 57,
+    "address": "0xf58b673c1633ccef0ac58263cdc95ed80f817fc7",
+    "realized_pnl": 1521292.319698,
+    "net_pnl": 1521292.319698,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "3421198.6696980004",
+      "displayName": null,
+      "ethAddress": "0xf58b673c1633ccef0ac58263cdc95ed80f817fc7",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "501838.5334089999",
+            "roi": "0.1558958433",
+            "vlm": "58784214.2199999988"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "1196952.3111350001",
+            "roi": "0.3302894863",
+            "vlm": "260837052.9600000083"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "559707.603563",
+            "roi": "0.1167469688",
+            "vlm": "1150496711.7999999523"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "1521292.3196980001",
+            "roi": "0.2494921289",
+            "vlm": "12598556945.1199989319"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 58,
+    "address": "0x931153baac031d055389b41d12cd32c9bf0ae7a3",
+    "realized_pnl": 1027222.864596,
+    "net_pnl": 1027222.864596,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "75925.531883",
+      "displayName": null,
+      "ethAddress": "0x931153baac031d055389b41d12cd32c9bf0ae7a3",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "201548.58032",
+            "roi": "0.5127847337",
+            "vlm": "41241526.7800000012"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "318384.801134",
+            "roi": "0.873137171",
+            "vlm": "152000716.8199999928"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1134681.2932899999",
+            "roi": "1.482097537",
+            "vlm": "923931286.7899999619"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "1027222.8645960001",
+            "roi": "1.1765911863",
+            "vlm": "3213555381.9200000763"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 59,
+    "address": "0x7717a7a245d9f950e586822b8c9b46863ed7bd7e",
+    "realized_pnl": 1027199.906147,
+    "net_pnl": 1027199.906147,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "9683373.3461469989",
+      "displayName": null,
+      "ethAddress": "0x7717a7a245d9f950e586822b8c9b46863ed7bd7e",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-336459.515784",
+            "roi": "-0.0350689799",
+            "vlm": "136065209.9899999797"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "2702490.9785170006",
+            "roi": "0.2828272835",
+            "vlm": "614346478.5000001192"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "2311862.0097150002",
+            "roi": "0.1657723172",
+            "vlm": "2263618675.3799996376"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "1027199.906147",
+            "roi": "0.0503384023",
+            "vlm": "13222694619.5399990082"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 60,
+    "address": "0x6ab3af472fd676fdde0a13f6736b0ac64356bb06",
+    "realized_pnl": 951671.433907,
+    "net_pnl": 951671.433907,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4074272.5739069995",
+      "displayName": null,
+      "ethAddress": "0x6ab3af472fd676fdde0a13f6736b0ac64356bb06",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-146402.370893",
+            "roi": "-0.0676387781",
+            "vlm": "121551.46"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-588884.3205189998",
+            "roi": "-0.2258896395",
+            "vlm": "100623659.9299999923"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-192155.949677",
+            "roi": "-0.0665185407",
+            "vlm": "674421912.3999999762"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "951671.433907",
+            "roi": "0.1516439387",
+            "vlm": "1517139121.3199999332"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 61,
+    "address": "0xee9c076b0fca7a31e29e2f475eff5eb40a667ab6",
+    "realized_pnl": 875632.8215569998,
+    "net_pnl": 875632.8215569998,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "4493739.3615569994",
+      "displayName": null,
+      "ethAddress": "0xee9c076b0fca7a31e29e2f475eff5eb40a667ab6",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "298155.961593",
+            "roi": "0.0629817014",
+            "vlm": "60113205.2600000054"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "2933248.8929590005",
+            "roi": "0.6006897404",
+            "vlm": "261579902.4499999583"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1826280.7895750001",
+            "roi": "0.2942129525",
+            "vlm": "1095279218.120000124"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "875632.8215569998",
+            "roi": "0.1082688164",
+            "vlm": "2982751282.3899998665"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 62,
+    "address": "0x8c94949ef16f7e5711cb1dd1eec44f69bba173b0",
+    "realized_pnl": 582901.355378,
+    "net_pnl": 582901.355378,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "783499.180354",
+      "displayName": null,
+      "ethAddress": "0x8c94949ef16f7e5711cb1dd1eec44f69bba173b0",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "20720.20451",
+            "roi": "0.0271641007",
+            "vlm": "55314317.6400000006"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-366767.142328",
+            "roi": "-0.3022973073",
+            "vlm": "279064969.1700000167"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "163998.532337",
+            "roi": "0.1655009929",
+            "vlm": "991085774.6200000048"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "582901.3553779999",
+            "roi": "0.9643763216",
+            "vlm": "2633076917.9400000572"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 63,
+    "address": "0xd064091d94a9b308e4d5d998d4baae98aab8d887",
+    "realized_pnl": 338251.252037,
+    "net_pnl": 338251.252037,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "126132.424225",
+      "displayName": null,
+      "ethAddress": "0xd064091d94a9b308e4d5d998d4baae98aab8d887",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "6087.682235",
+            "roi": "0.0525988792",
+            "vlm": "5073568.0499999998"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "35224.54341",
+            "roi": "0.2096612919",
+            "vlm": "109808479.0300000012"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "-70856.406741",
+            "roi": "-0.2585171399",
+            "vlm": "693008136.2899999619"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "338251.252037",
+            "roi": "1.0397291676",
+            "vlm": "2873224329.1999998093"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 64,
+    "address": "0x07fd7e702ba749ffa49c3a6c17fcd9e6c7b7082a",
+    "realized_pnl": 315118.458164,
+    "net_pnl": 315118.458164,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "1521078.3581640001",
+      "displayName": null,
+      "ethAddress": "0x07fd7e702ba749ffa49c3a6c17fcd9e6c7b7082a",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "4163.819064",
+            "roi": "0.0028051401",
+            "vlm": "49128282.6700000018"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-16972.068502",
+            "roi": "-0.0112734572",
+            "vlm": "249501013.650000006"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "134834.213302",
+            "roi": "0.0996054596",
+            "vlm": "1339156284.6199998856"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "315118.458164",
+            "roi": "0.2590941749",
+            "vlm": "5081035511.3199996948"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 65,
+    "address": "0x1c1c270b573d55b68b3d14722b5d5d401511bed0",
+    "realized_pnl": 158204.286046,
+    "net_pnl": 158204.286046,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "710880.106046",
+      "displayName": "Greg",
+      "ethAddress": "0x1c1c270b573d55b68b3d14722b5d5d401511bed0",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "13525.805324",
+            "roi": "0.0173997948",
+            "vlm": "163586009.3700000048"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "55010.304605",
+            "roi": "0.2420876354",
+            "vlm": "706736377.8899999857"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "124647.435288",
+            "roi": "0.1296694662",
+            "vlm": "3086932380.1599998474"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "158204.286046",
+            "roi": "0.1705313732",
+            "vlm": "10219962219.0599994659"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 66,
+    "address": "0xfe0589b070c1095b75dc5891d7408cc3cf3b3e8a",
+    "realized_pnl": 60817.775338,
+    "net_pnl": 60817.775338,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "485829.8153380001",
+      "displayName": null,
+      "ethAddress": "0xfe0589b070c1095b75dc5891d7408cc3cf3b3e8a",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-24521.5305",
+            "roi": "-0.0401761037",
+            "vlm": "239270016.0399999619"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "44373.904125",
+            "roi": "0.0717878903",
+            "vlm": "869528307.7699999809"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "95764.921699",
+            "roi": "0.1672736828",
+            "vlm": "1879789600.5399999619"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "60817.775338",
+            "roi": "0.1001195475",
+            "vlm": "2188457712.9099998474"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 67,
+    "address": "0x8b6793beaecaed367fe1eb5257b78438b1b097aa",
+    "realized_pnl": 46198.385485,
+    "net_pnl": 46198.385485,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "241913.915485",
+      "displayName": "WOUKIE",
+      "ethAddress": "0x8b6793beaecaed367fe1eb5257b78438b1b097aa",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "-262355.617945",
+            "roi": "-0.5207104847",
+            "vlm": "114961928.099999994"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "-185689.026932",
+            "roi": "-0.4346907267",
+            "vlm": "308485303.5799999833"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "135012.220824",
+            "roi": "0.2957721215",
+            "vlm": "1737130433.0599999428"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "46198.385485",
+            "roi": "0.0846565343",
+            "vlm": "3145144375.1100001335"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "rank": 68,
+    "address": "0xa4f2d38dc1d5b748e90d775fd73ce847874e3a48",
+    "realized_pnl": 1706.975357,
+    "net_pnl": 1706.975357,
+    "breakdown": {
+      "fills_count": 0,
+      "funding_events": 0,
+      "fees": 0.0,
+      "funding": 0.0
+    },
+    "leaderboard_stat": {
+      "accountValue": "337493.870133",
+      "displayName": null,
+      "ethAddress": "0xa4f2d38dc1d5b748e90d775fd73ce847874e3a48",
+      "prize": 0,
+      "windowPerformances": [
+        [
+          "day",
+          {
+            "pnl": "962.28459",
+            "roi": "0.0360245914",
+            "vlm": "4656097.4800000004"
+          }
+        ],
+        [
+          "week",
+          {
+            "pnl": "4535.470778",
+            "roi": "0.1629412036",
+            "vlm": "143235805.349999994"
+          }
+        ],
+        [
+          "month",
+          {
+            "pnl": "1802.995357",
+            "roi": "0.0356552274",
+            "vlm": "722805335.2200000286"
+          }
+        ],
+        [
+          "allTime",
+          {
+            "pnl": "1706.975357",
+            "roi": "0.0336924022",
+            "vlm": "722838600.5099999905"
           }
         ]
       ]

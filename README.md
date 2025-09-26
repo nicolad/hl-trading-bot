@@ -1,16 +1,10 @@
-## Extensible grid trading bot for [Hyperliquid DEX](https://hyperliquid.xyz)
+## Hyperliquid strategy toolkit (Rust)
 
 > ⚠️ This software is for educational and research purposes. Trading cryptocurrencies involves substantial risk of loss. Never trade with funds you cannot afford to lose. Always validate strategies on testnet before live deployment.
 
-The project now ships as a pure Rust codebase focused on production-grade automation and reproducible research workflows.
+This repository is centred on a single loop: capture on-chain behaviour, mine repeatable edges, and deploy bots on Hyperliquid. The sections below focus on the binaries and configuration you need to move from raw data to trading strategies.
 
-## Quick start
-
-### Prerequisites
-- Rust toolchain (install with [rustup](https://rustup.rs/))
-- Hyperliquid testnet credentials and funded test account
-
-### Install
+## Setup
 
 ```bash
 git clone https://github.com/chainstacklabs/hyperliquid-trading-bot
@@ -18,29 +12,65 @@ cd hyperliquid-trading-bot
 cargo build
 ```
 
-### Configure the environment
-Create a `.env` file with your credentials:
+Dependencies:
+
+- Recent stable Rust toolchain (install with [rustup](https://rustup.rs/)).
+- Hyperliquid testnet credentials stored in `.env`:
+
+  ```bash
+  HYPERLIQUID_TESTNET_PRIVATE_KEY=0xYOUR_PRIVATE_KEY
+  HYPERLIQUID_TESTNET=true
+  ```
+
+## 1. Capture leaderboard snapshots
+
+`snapshot_pipeline` reads `leaderboard.json`, pulls detailed account snapshots for every address, and writes Polars-friendly datasets.
 
 ```bash
-HYPERLIQUID_TESTNET_PRIVATE_KEY=0xYOUR_PRIVATE_KEY
-HYPERLIQUID_TESTNET=true
+# leaderboard.json must exist in the repo root
+cargo run --bin snapshot_pipeline
 ```
 
-### Run the live engine
+Artifacts (written to the repository root):
+
+- `snapshots.ndjson` — streamable snapshots for Polars (`pl.read_ndjson`).
+- `trading_features.csv` — flattened feature matrix that powers clustering.
+- `snapshots_raw.json` — raw JSON array for manual inspection or replay tooling.
+
+Adjust API endpoints, rate limits, or output paths in `src/bin/snapshot_pipeline.rs` if required.
+
+## 2. Mine account-level patterns
+
+`patterns` consumes `trading_features.csv`, learns behavioural clusters, and emits basic trade recommendations.
 
 ```bash
-# Run the default conservative BTC configuration
+cargo run --bin patterns
+```
+
+Runtime output shows each cluster with sample counts, mean returns, and whether it triggered a trade bias. Two files accompany the console log:
+
+- `strategy_patterns.json` — per-cluster statistics (mean/median returns, win rate, leverage proxies, confidence).
+- `strategy_signals.csv` — actionable addresses with expected return and confidence for clusters that pass the filters.
+
+Bias thresholds and output paths live in `src/patterns.rs` (`Config::default`). Tune them before running if you want tighter confidence gates or custom locations.
+
+## 3. Deploy a bot
+
+When a configuration looks promising, launch it via the standard entry point:
+
+```bash
+# Discover the first active bot configuration
 cargo run
 
-# Run a specific bot configuration
-cargo run -- bots/your_config.yaml
+# Pin a specific configuration
+cargo run -- bots/btc_conservative.yaml
 ```
 
-`cargo run` blocks until Ctrl+C and performs graceful shutdown (disconnects market data, cancels outstanding orders, and stops strategies).
+The process handles graceful shutdown (cancel orders, disconnect feeds) on Ctrl+C.
 
-## Configuration
+## Configuration files
 
-Bot configurations use YAML and follow the same schema across live trading and backtests.
+YAML files in `bots/` define allocation limits, grid parameters, and risk rules. The same schema is used for both live execution and backtests.
 
 ```yaml
 name: "btc_conservative_clean"
@@ -71,38 +101,14 @@ monitoring:
   log_level: "INFO"
 ```
 
-## Nautilus-style backtesting
-
-The Rust-native backtesting harness reuses the live grid strategy, exchanges, and `nautilus-backtest` data iterator so signals behave exactly as they do in production while keeping Python dependencies out of the toolchain.
-
-```rust
-use chrono::{Duration, TimeZone, Utc};
-use hyperliquid_bot::backtesting::{run_backtest, PriceSample};
-use hyperliquid_bot::config::BotConfig;
-
-let config = BotConfig::load_from_str(include_str!("bots/btc_conservative.yaml"))?;
-let series = (0..5)
-    .map(|i| PriceSample::new(Utc.timestamp_opt(i * 60, 0).single().unwrap(), 100.0 + i as f64))
-    .collect::<Vec<_>>();
-let result = run_backtest(&config, 5000.0, &series)?;
-println!("final account value: {:.2}", result.final_value);
-```
-
-To execute the built-in regression scenarios:
+## Development checklist
 
 ```bash
-cargo test --test backtesting
+cargo fmt
+cargo clippy
+cargo test
 ```
 
-`run_backtest` returns execution history, cash balance, residual position, and marked-to-market equity so custom analytics can be layered on top.
+Run every change against the Hyperliquid testnet sandbox before deploying capital.
 
-## Development workflow
-
-```bash
-cargo fmt        # Format the workspace
-cargo clippy     # Lint with additional checks
-cargo test       # Execute unit and integration tests
-```
-
-The repository follows SOLID design principles with dependency injection and async I/O throughout the trading engine. Backtests should mirror live configurations; avoid duplicating strategy parameters in code.
 # hl-trading-bot

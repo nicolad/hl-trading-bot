@@ -69,6 +69,17 @@ pub struct Breakdown {
     pub funding: f64,
 }
 
+impl Default for Breakdown {
+    fn default() -> Self {
+        Self {
+            fills_count: 0,
+            funding_events: 0,
+            fees: 0.0,
+            funding: 0.0,
+        }
+    }
+}
+
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub struct WalletResult {
     pub rank: usize,
@@ -124,9 +135,26 @@ pub async fn fetch_top_wallets(
             async move {
                 let rank = index + 1;
                 let address = extract_address(&entry)?;
+                if let Some(pnl) = extract_all_time_pnl(&entry) {
+                    if pnl <= 0.0 {
+                        return Err(anyhow!("non-positive all-time pnl"));
+                    }
+                    let breakdown = Breakdown::default();
+                    return Ok::<_, anyhow::Error>(WalletResult {
+                        rank,
+                        address,
+                        realized_pnl: pnl,
+                        net_pnl: pnl,
+                        breakdown,
+                        leaderboard_stat: entry,
+                    });
+                }
                 let (realized, net, breakdown) =
                     compute_realized_and_net(client, &params, &address, params.start_ms, end_ms)
                         .await?;
+                if net <= 0.0 {
+                    return Err(anyhow!("non-positive reconstructed pnl"));
+                }
                 Ok::<_, anyhow::Error>(WalletResult {
                     rank,
                     address,
@@ -332,6 +360,28 @@ fn extract_address(entry: &Value) -> Result<String> {
         }
     }
     Err(anyhow!("missing address"))
+}
+
+fn extract_all_time_pnl(entry: &Value) -> Option<f64> {
+    let windows = entry.get("windowPerformances")?.as_array()?;
+    for window in windows {
+        let pair = window.as_array()?;
+        if pair.len() != 2 {
+            continue;
+        }
+        if pair[0].as_str()? == "allTime" {
+            return parse_numeric(pair[1].get("pnl")?);
+        }
+    }
+    None
+}
+
+fn parse_numeric(value: &Value) -> Option<f64> {
+    match value {
+        Value::Number(number) => number.as_f64(),
+        Value::String(text) => text.parse::<f64>().ok(),
+        _ => None,
+    }
 }
 
 fn as_f64(value: &Value) -> f64 {

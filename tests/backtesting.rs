@@ -1,6 +1,11 @@
 use chrono::{Duration, TimeZone, Utc};
 
-use hyperliquid_bot::backtesting::{PriceSample, run_backtest};
+use hyperliquid_bot::backtest::{
+    BacktestEngine,
+    BacktestRequest,
+    PriceSample,
+    engines::{NautilusBacktest, SimpleBacktest},
+};
 use hyperliquid_bot::config::BotConfig;
 
 fn sample_config() -> BotConfig {
@@ -44,20 +49,40 @@ fn build_series(prices: &[f64]) -> Vec<PriceSample> {
 fn grid_strategy_realizes_partial_cycle_profit() {
     let config = sample_config();
     let series = build_series(&[100.0, 95.0, 90.0, 100.0, 110.0]);
-    let result = run_backtest(&config, 5000.0, &series).expect("backtest success");
+    let request = BacktestRequest::new(&config, 5000.0, &series);
+
+    let nautilus = NautilusBacktest::default();
+    let result = nautilus.run(request).expect("backtest success");
     assert_eq!(result.trades.len(), 3);
     assert!((result.final_value - 5327.763819007356).abs() < 1e-6);
     assert!((result.cash - 4000.0).abs() < 1e-6);
     assert!((result.position - 12.070580172794143).abs() < 1e-6);
+
+    let simple = SimpleBacktest::default();
+    let simple_result = simple
+        .run(BacktestRequest::new(&config, 5000.0, &series))
+        .expect("simple backtest success");
+    assert_eq!(simple_result.trades.len(), result.trades.len());
+    assert!((simple_result.final_value - result.final_value).abs() < 1e-9);
 }
 
 #[test]
 fn grid_strategy_respects_cash_constraints() {
     let config = sample_config();
     let series = build_series(&[100.0, 95.0, 90.0, 100.0, 110.0]);
-    let result = run_backtest(&config, 1000.0, &series).expect("backtest success");
+    let request = BacktestRequest::new(&config, 1000.0, &series);
+
+    let nautilus = NautilusBacktest::default();
+    let result = nautilus.run(request).expect("backtest success");
     assert_eq!(result.trades.len(), 2);
     assert!((result.final_value - 1105.5415967851334).abs() < 1e-6);
     assert!((result.cash - 1000.0).abs() < 1e-6);
     assert!((result.position - 0.9594690616830306).abs() < 1e-6);
+
+    let simple = SimpleBacktest::default();
+    let simple_result = simple
+        .run(BacktestRequest::new(&config, 1000.0, &series))
+        .expect("simple backtest success");
+    assert_eq!(simple_result.trades.len(), result.trades.len());
+    assert!((simple_result.final_value - result.final_value).abs() < 1e-9);
 }

@@ -13,6 +13,13 @@ vendor/
 # Logs
 *.log
 
+# Pipeline artifacts
+snapshots.ndjson
+trading_features.csv
+pattern_clusters.json
+strategy_patterns.json
+strategy_signals.csv
+
 # Editor/OS files
 .DS_Store
 Thumbs.db
