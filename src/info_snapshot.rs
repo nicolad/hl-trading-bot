@@ -5,15 +5,16 @@ use std::io::{BufRead, BufReader, BufWriter, Write};
 use std::path::Path;
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, Ordering as AtomicOrdering};
-use std::time::{Duration, SystemTime, UNIX_EPOCH};
+use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
 use anyhow::{Context, Result, anyhow, bail, ensure};
 use futures::{StreamExt, stream};
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
-use tokio::sync::Semaphore;
+use tokio::sync::{Mutex, Semaphore};
 
 use ndarray::Array2;
+use polars::prelude::*;
 
 use crate::leaderboard::InfoApiClient;
 use linfa::prelude::{Fit, Predict};
@@ -27,6 +28,7 @@ pub struct BulkSnapshotConfig {
     pub retry_delay_ms: u64,
     pub timeout_seconds: u64,
     pub batch_size: usize,
+    pub min_request_interval_ms: u64,
 }
 
 impl Default for BulkSnapshotConfig {
@@ -37,6 +39,7 @@ impl Default for BulkSnapshotConfig {
             retry_delay_ms: 500,
             timeout_seconds: 30,
             batch_size: 100,
+            min_request_interval_ms: 250,
         }
     }
 }
@@ -44,7 +47,7 @@ impl Default for BulkSnapshotConfig {
 /// Output format options for Polars-ready files
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PolarsOutputConfig {
-    pub ndjson_path: Option<String>,
+    pub parquet_path: Option<String>,
     pub features_csv_path: Option<String>,
     pub snapshots_json_path: Option<String>,
     pub include_metadata: bool,
@@ -53,7 +56,7 @@ pub struct PolarsOutputConfig {
 impl Default for PolarsOutputConfig {
     fn default() -> Self {
         Self {
-            ndjson_path: Some("snapshots.jsonl".to_string()),
+            parquet_path: Some("snapshots.parquet".to_string()),
             features_csv_path: Some("features.csv".to_string()),
             snapshots_json_path: None,
             include_metadata: true,
@@ -168,11 +171,16 @@ pub async fn fetch_snapshots_from_leaderboard(
     // Load previously fetched snapshots (if any) so we can skip successful ones.
     let mut existing_records = Vec::new();
     let mut completed_addresses: HashSet<String> = HashSet::new();
-    if let Some(ref ndjson_path) = output.ndjson_path {
-        let path = Path::new(ndjson_path);
+    if let Some(ref parquet_path) = output.parquet_path {
+        let path = Path::new(parquet_path);
         if path.exists() {
-            existing_records = load_existing_snapshot_records(ndjson_path)
-                .with_context(|| format!("loading existing snapshots from {}", ndjson_path))?;
+            existing_records = load_existing_snapshot_records(parquet_path)
+                .with_context(|| format!("loading existing snapshots from {}", parquet_path))?;
+            eprintln!(
+                "Loaded {} cached snapshots from {}",
+                existing_records.len(),
+                parquet_path
+            );
             for record in &existing_records {
                 completed_addresses.insert(record.snapshot.address.clone());
             }
@@ -182,6 +190,11 @@ pub async fn fetch_snapshots_from_leaderboard(
                     completed_addresses.len()
                 );
                 addresses.retain(|addr| !completed_addresses.contains(addr));
+            } else {
+                eprintln!(
+                    "Cached snapshot file {} did not contain previously fetched addresses",
+                    parquet_path
+                );
             }
         }
     }
@@ -211,6 +224,8 @@ pub async fn fetch_snapshots_from_leaderboard(
 
     // Create semaphore for concurrency control
     let semaphore = Arc::new(Semaphore::new(config.concurrency));
+    let rate_limiter = Arc::new(Mutex::new(None::<Instant>));
+    let min_interval = Duration::from_millis(config.min_request_interval_ms);
     let progress = Arc::new(AtomicUsize::new(0));
     let failures = Arc::new(AtomicUsize::new(0));
 
@@ -225,6 +240,7 @@ pub async fn fetch_snapshots_from_leaderboard(
         .map(|address| {
             let client = Arc::clone(&client);
             let semaphore = Arc::clone(&semaphore);
+            let rate_limiter_handle = Arc::clone(&rate_limiter);
             let leaderboard_entry = leaderboard_map.get(&address).cloned();
             let config = config.clone();
             let progress = Arc::clone(&progress);
@@ -239,6 +255,8 @@ pub async fn fetch_snapshots_from_leaderboard(
                     address.clone(),
                     config.retry_count,
                     Duration::from_millis(config.retry_delay_ms),
+                    rate_limiter_handle,
+                    min_interval,
                 )
                 .await
                 {
@@ -323,18 +341,25 @@ async fn fetch_snapshot_with_retries(
     address: String,
     max_retries: usize,
     base_delay: Duration,
+    rate_limiter: Arc<Mutex<Option<Instant>>>,
+    min_interval: Duration,
 ) -> Result<HyperliquidUserSnapshot> {
     let mut last_error = None;
 
     for attempt in 0..=max_retries {
+        enforce_rate_limit(&rate_limiter, min_interval).await;
         let request = SnapshotRequest::new(&address);
 
         match fetch_user_snapshot(Arc::clone(&client), request).await {
             Ok(snapshot) => return Ok(snapshot),
             Err(e) => {
+                let is_rate_limited = e.to_string().contains("http 429");
                 last_error = Some(e);
 
                 if attempt < max_retries {
+                    if is_rate_limited {
+                        tokio::time::sleep(Duration::from_secs(2)).await;
+                    }
                     let delay = base_delay * (2_u32.pow(attempt as u32));
                     tokio::time::sleep(delay).await;
                 }
@@ -343,6 +368,31 @@ async fn fetch_snapshot_with_retries(
     }
 
     Err(last_error.unwrap_or_else(|| anyhow!("Max retries exceeded for {}", address)))
+}
+
+async fn enforce_rate_limit(
+    limiter: &Arc<Mutex<Option<Instant>>>,
+    min_interval: Duration,
+) {
+    loop {
+        let mut guard = limiter.lock().await;
+        let now = Instant::now();
+        match *guard {
+            Some(last) => {
+                if let Some(elapsed) = now.checked_duration_since(last) {
+                    if elapsed < min_interval {
+                        let wait = min_interval - elapsed;
+                        drop(guard);
+                        tokio::time::sleep(wait).await;
+                        continue;
+                    }
+                }
+            }
+            None => {}
+        }
+        *guard = Some(now);
+        break;
+    }
 }
 
 /// Extract analytical features from a snapshot
@@ -563,12 +613,12 @@ async fn write_polars_outputs(
     config: &PolarsOutputConfig,
 ) -> Result<()> {
     // Write NDJSON format (best for Polars)
-    if let Some(ref ndjson_path) = config.ndjson_path {
-        write_snapshots_ndjson(snapshots, ndjson_path, config.include_metadata)?;
+    if let Some(ref parquet_path) = config.parquet_path {
+        write_snapshots_parquet(snapshots, parquet_path, config.include_metadata)?;
         eprintln!(
-            "Wrote {} snapshots to NDJSON: {}",
+            "Wrote {} snapshots to Parquet: {}",
             snapshots.len(),
-            ndjson_path
+            parquet_path
         );
     }
 
@@ -591,36 +641,52 @@ async fn write_polars_outputs(
     Ok(())
 }
 
-/// Write snapshots as NDJSON (one snapshot per line) - optimal for Polars
-fn write_snapshots_ndjson(
+/// Write snapshots as Parquet for efficient Polars ingestion
+fn write_snapshots_parquet(
     snapshots: &[SnapshotRecord],
     path: &str,
     include_metadata: bool,
 ) -> Result<()> {
-    let file = File::create(path).context("Failed to create NDJSON file")?;
-    let mut writer = BufWriter::new(file);
+    let mut addresses = Vec::with_capacity(snapshots.len());
+    let mut fetched_at_ms = Vec::with_capacity(snapshots.len());
+    let mut snapshot_json = Vec::with_capacity(snapshots.len());
+    let mut features_json: Vec<Option<String>> = Vec::with_capacity(snapshots.len());
+    let mut leaderboard_json: Vec<Option<String>> = Vec::with_capacity(snapshots.len());
 
     for record in snapshots {
-        let line = if include_metadata {
-            json!({
-                "address": record.snapshot.address,
-                "fetched_at_ms": record.snapshot.fetched_at_ms,
-                "features": record.features,
-                "leaderboard": record.leaderboard_data,
-                "snapshot": record.snapshot
-            })
-        } else {
-            json!({
-                "address": record.snapshot.address,
-                "snapshot": record.snapshot
-            })
-        };
+        addresses.push(record.snapshot.address.clone());
+        fetched_at_ms.push(record.snapshot.fetched_at_ms as i64);
+        snapshot_json.push(serde_json::to_string(&record.snapshot)?);
 
-        serde_json::to_writer(&mut writer, &line)?;
-        writeln!(writer)?;
+        if include_metadata {
+            features_json.push(Some(serde_json::to_string(&record.features)?));
+            let leaderboard_serialized = match record.leaderboard_data.as_ref() {
+                Some(entry) => Some(serde_json::to_string(entry)?),
+                None => None,
+            };
+            leaderboard_json.push(leaderboard_serialized);
+        } else {
+            features_json.push(None);
+            leaderboard_json.push(None);
+        }
     }
 
-    writer.flush()?;
+    let features_slice: Vec<Option<&str>> = features_json.iter().map(|v| v.as_deref()).collect();
+    let leaderboard_slice: Vec<Option<&str>> = leaderboard_json.iter().map(|v| v.as_deref()).collect();
+
+    let mut df = DataFrame::new(vec![
+        Series::new("address".into(), addresses),
+        Series::new("fetched_at_ms".into(), fetched_at_ms),
+        Series::new("snapshot_json".into(), snapshot_json),
+        Series::new("features_json".into(), features_slice),
+        Series::new("leaderboard_json".into(), leaderboard_slice),
+    ])?;
+
+    let mut file = File::create(path).context("Failed to create Parquet file")?;
+    ParquetWriter::new(&mut file)
+        .finish(&mut df)
+        .context("writing snapshots Parquet")?;
+
     Ok(())
 }
 
@@ -698,6 +764,67 @@ fn write_snapshots_json(snapshots: &[SnapshotRecord], path: &str) -> Result<()> 
 }
 
 fn load_existing_snapshot_records(path: &str) -> Result<Vec<SnapshotRecord>> {
+    if path.ends_with(".parquet") {
+        return load_snapshot_records_parquet(path);
+    }
+    load_snapshot_records_ndjson(path)
+}
+
+fn load_snapshot_records_parquet(path: &str) -> Result<Vec<SnapshotRecord>> {
+    let mut file = File::open(path).context("opening existing snapshots Parquet")?;
+    let df = ParquetReader::new(&mut file)
+        .finish()
+        .context("reading snapshots Parquet")?;
+
+    let address_col = df.column("address")?.str()?;
+    let snapshot_col = df.column("snapshot_json")?.str()?;
+    let fetched_col = df.column("fetched_at_ms")?.i64()?;
+    let features_col = df.column("features_json")?.str().ok();
+    let leaderboard_col = df.column("leaderboard_json")?.str().ok();
+
+    let mut records = Vec::with_capacity(df.height());
+
+    for idx in 0..df.height() {
+        let address = address_col
+            .get(idx)
+            .ok_or_else(|| anyhow!("missing address in parquet row"))?
+            .to_string();
+
+        let snapshot_json = snapshot_col
+            .get(idx)
+            .ok_or_else(|| anyhow!("missing snapshot json for {address}"))?;
+        let mut snapshot: HyperliquidUserSnapshot = serde_json::from_str(snapshot_json)
+            .with_context(|| format!("deserializing snapshot for {address}"))?;
+
+        if snapshot.address.is_empty() {
+            snapshot.address = address.clone();
+        }
+
+        if let Some(value) = fetched_col.get(idx) {
+            snapshot.fetched_at_ms = value as u64;
+        }
+
+        let leaderboard_data = match leaderboard_col.and_then(|col| col.get(idx)) {
+            Some(s) => Some(serde_json::from_str::<LeaderboardEntry>(s)?),
+            None => None,
+        };
+
+        let features = match features_col.and_then(|col| col.get(idx)) {
+            Some(s) => serde_json::from_str::<SnapshotFeatures>(s)?,
+            None => extract_features(&snapshot, leaderboard_data.as_ref()),
+        };
+
+        records.push(SnapshotRecord {
+            snapshot,
+            features,
+            leaderboard_data,
+        });
+    }
+
+    Ok(records)
+}
+
+fn load_snapshot_records_ndjson(path: &str) -> Result<Vec<SnapshotRecord>> {
     let file = File::open(path).context("opening existing snapshots NDJSON")?;
     let reader = BufReader::new(file);
     let mut records = Vec::new();

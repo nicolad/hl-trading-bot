@@ -1,12 +1,20 @@
-mod grid;
+pub mod ema;
 
 use anyhow::Result;
 
-use crate::{config::BotConfig, interfaces::TradingStrategy};
+use crate::{
+    config::{BotConfig, StrategyKind},
+    interfaces::TradingStrategy,
+};
 
-pub use grid::BasicGridStrategy;
+pub use ema::EmaStrategy;
 
 pub fn create_strategy(config: &BotConfig) -> Result<Box<dyn TradingStrategy>> {
-    let strategy = BasicGridStrategy::new(config);
-    Ok(Box::new(strategy))
+    let strategy: Box<dyn TradingStrategy> = match config.strategy.kind {
+        StrategyKind::Grid => {
+            return Err(anyhow::anyhow!("Grid strategy not implemented yet"));
+        }
+        StrategyKind::Ema => Box::new(EmaStrategy::new(config)?),
+    };
+    Ok(strategy)
 }

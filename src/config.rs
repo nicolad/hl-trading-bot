@@ -27,6 +27,97 @@ pub enum RiskLevel {
     Aggressive,
 }
 
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
+#[serde(rename_all = "snake_case")]
+pub enum StrategyKind {
+    Grid,
+    Ema,
+}
+
+impl Default for StrategyKind {
+    fn default() -> Self {
+        Self::Grid
+    }
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
+pub struct EmaStrategyConfig {
+    #[serde(default = "EmaStrategyConfig::default_fast")]
+    pub fast_period: usize,
+    #[serde(default = "EmaStrategyConfig::default_slow")]
+    pub slow_period: usize,
+    #[serde(default = "EmaStrategyConfig::default_order_size")]
+    pub order_size: f64,
+}
+
+impl EmaStrategyConfig {
+    const fn default_fast() -> usize {
+        12
+    }
+
+    const fn default_slow() -> usize {
+        26
+    }
+
+    const fn default_order_size() -> f64 {
+        1.0
+    }
+
+    fn validate(&self) -> Result<(), ConfigError> {
+        if self.fast_period == 0 {
+            return Err(ConfigError::Invalid("EMA fast_period must be positive".into()));
+        }
+        if self.slow_period == 0 {
+            return Err(ConfigError::Invalid("EMA slow_period must be positive".into()));
+        }
+        if self.fast_period >= self.slow_period {
+            return Err(ConfigError::Invalid(
+                "EMA fast_period must be less than slow_period".into(),
+            ));
+        }
+        if !self.order_size.is_finite() || self.order_size <= 0.0 {
+            return Err(ConfigError::Invalid("EMA order_size must be positive".into()));
+        }
+        Ok(())
+    }
+}
+
+impl Default for EmaStrategyConfig {
+    fn default() -> Self {
+        Self {
+            fast_period: Self::default_fast(),
+            slow_period: Self::default_slow(),
+            order_size: Self::default_order_size(),
+        }
+    }
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
+pub struct StrategyConfig {
+    #[serde(default)]
+    pub kind: StrategyKind,
+    #[serde(default)]
+    pub ema: EmaStrategyConfig,
+}
+
+impl Default for StrategyConfig {
+    fn default() -> Self {
+        Self {
+            kind: StrategyKind::default(),
+            ema: EmaStrategyConfig::default(),
+        }
+    }
+}
+
+impl StrategyConfig {
+    fn validate(&self) -> Result<(), ConfigError> {
+        match self.kind {
+            StrategyKind::Grid => Ok(()),
+            StrategyKind::Ema => self.ema.validate(),
+        }
+    }
+}
+
 impl Default for RiskLevel {
     fn default() -> Self {
         Self::Moderate
@@ -583,6 +674,8 @@ pub struct BotConfig {
     #[serde(default)]
     pub grid: GridConfig,
     #[serde(default)]
+    pub strategy: StrategyConfig,
+    #[serde(default)]
     pub risk_management: RiskManagementConfig,
     #[serde(default)]
     pub monitoring: MonitoringConfig,
@@ -611,6 +704,7 @@ impl BotConfig {
         self.exchange.validate()?;
         self.account.validate()?;
         self.grid.validate()?;
+        self.strategy.validate()?;
         self.risk_management.validate()?;
         self.monitoring.validate()?;
         Ok(())

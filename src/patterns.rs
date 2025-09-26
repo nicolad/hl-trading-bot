@@ -41,6 +41,7 @@ pub struct Config {
     pub min_cluster_size: usize,
     pub min_edge: f64,
     pub min_win_rate: f64,
+    pub min_t_stat: f64,
 }
 
 impl Default for Config {
@@ -53,6 +54,7 @@ impl Default for Config {
             min_cluster_size: 10,
             min_edge: 0.001,
             min_win_rate: 0.52,
+            min_t_stat: 1.5,
         }
     }
 }
@@ -68,6 +70,7 @@ pub struct PatternSummary {
     pub avg_volume: f64,
     pub avg_leverage: f64,
     pub confidence: f64,
+    pub t_stat: f64,
     pub action: Option<String>,
     pub stop_loss: Option<f64>,
     pub take_profit: Option<f64>,
@@ -90,8 +93,6 @@ pub struct StrategyOutput {
 
 struct ClusterDecision {
     action: String,
-    stop_loss: f64,
-    take_profit: f64,
     confidence: f64,
 }
 
@@ -144,11 +145,12 @@ pub fn display_report(output: &StrategyOutput) {
 
     for pattern in &output.patterns {
         println!(
-            "cluster {} ⇒ samples: {}, mean_ret: {:.5}, win_rate: {:.3}, action: {}",
+            "cluster {} ⇒ samples: {}, mean_ret: {:.5}, win_rate: {:.3}, t_stat: {:.2}, action: {}",
             pattern.cluster_id,
             pattern.sample_count,
             pattern.mean_return,
             pattern.win_rate,
+            pattern.t_stat,
             pattern.action.as_deref().unwrap_or("no-trade")
         );
     }
@@ -252,6 +254,18 @@ fn compute_cluster_summary(df: &DataFrame) -> Result<DataFrame> {
             col("expected_return").mean().alias("mean_return"),
             col("expected_return").median().alias("median_return"),
             col("expected_return").std(1).alias("return_std"),
+            col("expected_return")
+                .quantile(lit(0.1), QuantileInterpolOptions::Nearest)
+                .alias("p10"),
+            col("expected_return")
+                .quantile(lit(0.25), QuantileInterpolOptions::Nearest)
+                .alias("p25"),
+            col("expected_return")
+                .quantile(lit(0.75), QuantileInterpolOptions::Nearest)
+                .alias("p75"),
+            col("expected_return")
+                .quantile(lit(0.9), QuantileInterpolOptions::Nearest)
+                .alias("p90"),
             col("win_rate").mean().alias("avg_win_rate"),
             col("total_volume").mean().alias("avg_volume"),
             col("leverage").mean().alias("avg_leverage"),
@@ -273,6 +287,10 @@ fn build_patterns(
     let means = summary.column("mean_return").unwrap().f64().unwrap();
     let medians = summary.column("median_return").unwrap().f64().unwrap();
     let stds = summary.column("return_std").unwrap().f64().unwrap();
+    let p10 = summary.column("p10").unwrap().f64().unwrap();
+    let p25 = summary.column("p25").unwrap().f64().unwrap();
+    let p75 = summary.column("p75").unwrap().f64().unwrap();
+    let p90 = summary.column("p90").unwrap().f64().unwrap();
     let win_rates = summary.column("avg_win_rate").unwrap().f64().unwrap();
     let volumes = summary.column("avg_volume").unwrap().f64().unwrap();
     let leverages = summary.column("avg_leverage").unwrap().f64().unwrap();
@@ -286,48 +304,52 @@ fn build_patterns(
         let mean_return = means.get(i).unwrap_or(0.0);
         let median_return = medians.get(i).unwrap_or(0.0);
         let return_std = stds.get(i).unwrap_or(0.0).abs();
+        let q10 = p10.get(i).unwrap_or(0.0);
+        let q25 = p25.get(i).unwrap_or(0.0);
+        let q75 = p75.get(i).unwrap_or(0.0);
+        let q90 = p90.get(i).unwrap_or(0.0);
         let win_rate = win_rates.get(i).unwrap_or(0.0).max(0.0);
         let avg_volume = volumes.get(i).unwrap_or(0.0);
         let avg_leverage = leverages.get(i).unwrap_or(0.0);
 
-        let confidence = if sample_count > 0 {
-            (sample_count as f64).ln_1p() * win_rate
+        let t_stat = if sample_count > 1 && return_std.is_finite() && return_std > 0.0 {
+            let std_err = return_std / (sample_count as f64).sqrt();
+            if std_err > 0.0 {
+                mean_return / std_err
+            } else {
+                0.0
+            }
         } else {
             0.0
         };
+
+        let confidence = t_stat.abs();
 
         let mut action = None;
         let mut stop = None;
         let mut take = None;
 
-        if sample_count >= cfg.min_cluster_size && win_rate >= cfg.min_win_rate {
+        let adjusted_win = cfg.min_win_rate - (0.1 / (sample_count.max(1) as f64).sqrt());
+
+        if sample_count >= cfg.min_cluster_size
+            && win_rate >= adjusted_win
+            && confidence >= cfg.min_t_stat
+        {
             if mean_return >= cfg.min_edge {
-                let stop_loss = cfg.min_edge.max(return_std.max(cfg.min_edge));
-                let take_profit = (mean_return.abs() + return_std).max(cfg.min_edge);
                 action = Some("LONG".to_string());
-                stop = Some(stop_loss);
-                take = Some(take_profit);
-                decisions.insert(
-                    cluster_id,
-                    ClusterDecision {
-                        action: "LONG".to_string(),
-                        stop_loss,
-                        take_profit,
-                        confidence,
-                    },
-                );
+                stop = Some(q25.abs().max(cfg.min_edge));
+                take = Some(q90.max(cfg.min_edge));
             } else if mean_return <= -cfg.min_edge {
-                let stop_loss = cfg.min_edge.max(return_std.max(cfg.min_edge));
-                let take_profit = (mean_return.abs() + return_std).max(cfg.min_edge);
                 action = Some("SHORT".to_string());
-                stop = Some(stop_loss);
-                take = Some(take_profit);
+                stop = Some(q75.abs().max(cfg.min_edge));
+                take = Some((-q10).max(cfg.min_edge));
+            }
+
+            if let Some(ref chosen) = action {
                 decisions.insert(
                     cluster_id,
                     ClusterDecision {
-                        action: "SHORT".to_string(),
-                        stop_loss,
-                        take_profit,
+                        action: chosen.clone(),
                         confidence,
                     },
                 );
@@ -344,10 +366,61 @@ fn build_patterns(
             avg_volume,
             avg_leverage,
             confidence,
+            t_stat,
             action,
             stop_loss: stop,
             take_profit: take,
         });
+    }
+
+    if decisions.is_empty() {
+        if let Some((idx, best)) = patterns
+            .iter()
+            .enumerate()
+            .filter(|(_, p)| p.mean_return > cfg.min_edge)
+            .max_by(|(_, a), (_, b)| a
+                .mean_return
+                .partial_cmp(&b.mean_return)
+                .unwrap_or(std::cmp::Ordering::Equal))
+        {
+            let new_conf = best.mean_return.abs() / (best.return_std + cfg.min_edge);
+            decisions.insert(
+                best.cluster_id,
+                ClusterDecision {
+                    action: "LONG".to_string(),
+                    confidence: new_conf,
+                },
+            );
+            if let Some(entry) = patterns.get_mut(idx) {
+                entry.action = Some("LONG".to_string());
+                entry.confidence = new_conf;
+                entry.stop_loss = Some((entry.return_std + cfg.min_edge).max(cfg.min_edge));
+                entry.take_profit = Some((entry.mean_return.abs() + entry.return_std).max(cfg.min_edge));
+            }
+        } else if let Some((idx, best)) = patterns
+            .iter()
+            .enumerate()
+            .filter(|(_, p)| p.mean_return < -cfg.min_edge)
+            .min_by(|(_, a), (_, b)| a
+                .mean_return
+                .partial_cmp(&b.mean_return)
+                .unwrap_or(std::cmp::Ordering::Equal))
+        {
+            let new_conf = best.mean_return.abs() / (best.return_std + cfg.min_edge);
+            decisions.insert(
+                best.cluster_id,
+                ClusterDecision {
+                    action: "SHORT".to_string(),
+                    confidence: new_conf,
+                },
+            );
+            if let Some(entry) = patterns.get_mut(idx) {
+                entry.action = Some("SHORT".to_string());
+                entry.confidence = new_conf;
+                entry.stop_loss = Some((entry.return_std + cfg.min_edge).max(cfg.min_edge));
+                entry.take_profit = Some((entry.mean_return.abs() + entry.return_std).max(cfg.min_edge));
+            }
+        }
     }
 
     (patterns, decisions)

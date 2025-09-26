@@ -23,7 +23,7 @@ linfa = "0.7"
 linfa-clustering = "0.7"
 ndarray = "0.15"
 rayon = "1.10"
-polars = { version = "0.43", features = ["lazy", "csv"] }
+polars = { version = "0.43", features = ["lazy", "csv", "parquet"] }
 
 nautilus-core = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-core", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
 nautilus-trading = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-trading", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
@@ -32,6 +32,7 @@ nautilus-risk = { git = "https://github.com/nautechsystems/nautilus_trader", pac
 nautilus-hyperliquid = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-hyperliquid", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9" }
 nautilus-backtest = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-backtest", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9", default-features = false }
 nautilus-model = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-model", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9", features = ["stubs"] }
+nautilus-indicators = { git = "https://github.com/nautechsystems/nautilus_trader", package = "nautilus-indicators", rev = "7f52d2fb7456c70c6421a436d72c1756a449eae9", default-features = false }
 
 [dev-dependencies]
 tempfile = "3"

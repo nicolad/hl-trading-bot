@@ -1,3 +1,4 @@
+pub mod backtest;
 pub mod backtesting;
 pub mod config;
 pub mod endpoints;

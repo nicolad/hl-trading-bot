@@ -33,7 +33,7 @@ cargo run --bin snapshot_pipeline
 
 Artifacts (written to the repository root):
 
-- `snapshots.ndjson` — streamable snapshots for Polars (`pl.read_ndjson`).
+- `snapshots.parquet` — columnar snapshots for Polars (`pl.read_parquet`).
 - `trading_features.csv` — flattened feature matrix that powers clustering.
 - `snapshots_raw.json` — raw JSON array for manual inspection or replay tooling.
 

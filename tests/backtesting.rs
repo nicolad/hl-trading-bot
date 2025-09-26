@@ -1,11 +1,6 @@
 use chrono::{Duration, TimeZone, Utc};
 
-use hyperliquid_bot::backtest::{
-    BacktestEngine,
-    BacktestRequest,
-    PriceSample,
-    engines::{NautilusBacktest, SimpleBacktest},
-};
+use hyperliquid_bot::backtest::{BacktestEngine, BacktestRequest, PriceSample, engines::NautilusBacktest};
 use hyperliquid_bot::config::BotConfig;
 
 fn sample_config() -> BotConfig {
@@ -58,12 +53,6 @@ fn grid_strategy_realizes_partial_cycle_profit() {
     assert!((result.cash - 4000.0).abs() < 1e-6);
     assert!((result.position - 12.070580172794143).abs() < 1e-6);
 
-    let simple = SimpleBacktest::default();
-    let simple_result = simple
-        .run(BacktestRequest::new(&config, 5000.0, &series))
-        .expect("simple backtest success");
-    assert_eq!(simple_result.trades.len(), result.trades.len());
-    assert!((simple_result.final_value - result.final_value).abs() < 1e-9);
 }
 
 #[test]
@@ -79,10 +68,4 @@ fn grid_strategy_respects_cash_constraints() {
     assert!((result.cash - 1000.0).abs() < 1e-6);
     assert!((result.position - 0.9594690616830306).abs() < 1e-6);
 
-    let simple = SimpleBacktest::default();
-    let simple_result = simple
-        .run(BacktestRequest::new(&config, 1000.0, &series))
-        .expect("simple backtest success");
-    assert_eq!(simple_result.trades.len(), result.trades.len());
-    assert!((simple_result.final_value - result.final_value).abs() < 1e-9);
 }

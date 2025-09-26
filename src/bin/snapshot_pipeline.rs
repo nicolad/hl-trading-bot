@@ -28,9 +28,10 @@ async fn main() -> Result<()> {
             retry_delay_ms: 1_000,
             timeout_seconds: 30,
             batch_size: 50,
+            min_request_interval_ms: 500,
         },
         output: PolarsOutputConfig {
-            ndjson_path: Some("snapshots.ndjson".into()),
+            parquet_path: Some("snapshots.parquet".into()),
             features_csv_path: Some("trading_features.csv".into()),
             snapshots_json_path: Some("snapshots_raw.json".into()),
             include_metadata: true,
@@ -82,14 +83,14 @@ async fn main() -> Result<()> {
     );
 
     println!("\n📁 Output Files Generated:");
-    println!("  - snapshots.ndjson (Polars NDJSON)");
+    println!("  - snapshots.parquet (Polars Parquet)");
     println!("  - trading_features.csv (Features for ML)");
     println!("  - raw_snapshots.json (Compatibility format)");
     println!("  - trading_patterns.json (Discovered patterns)");
     println!("  - trading_signals.csv (Generated trading signals)");
 
     println!("\n💡 Next Steps:");
-    println!("  - Load NDJSON in Polars: pl.read_ndjson('snapshots.ndjson')");
+    println!("  - Load Parquet in Polars: pl.read_parquet('snapshots.parquet')");
     println!("  - Load features CSV: pl.read_csv('trading_features.csv')");
     println!("  - Analyze patterns with your ML pipeline");
     println!("  - Backtest signals on historical data");

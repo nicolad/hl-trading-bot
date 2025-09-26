@@ -1,38 +1,55 @@
 use anyhow::Result;
+use chrono::{DateTime, Utc};
 
-mod core;
-pub mod engines;
+pub mod ema;
 
-pub use core::{BacktestResult, PriceSample, TradeExecution};
-use core::execute_backtest;
+pub use nautilus_backtest::engine::BacktestEngine;
+pub use nautilus_backtest::config::BacktestEngineConfig;
+pub use nautilus_model::data::Bar;
 
 use crate::config::BotConfig;
 
-#[derive(Clone, Copy)]
-pub struct BacktestRequest<'a> {
-    pub config: &'a BotConfig,
-    pub initial_cash: f64,
-    pub samples: &'a [PriceSample],
+#[derive(Debug, Clone)]
+pub struct BacktestResult {
+    pub initial_balance: f64,
+    pub final_balance: f64,
+    pub total_pnl: f64,
+    pub total_return: f64,
+    pub max_drawdown: f64,
+    pub sharpe_ratio: f64,
+    pub total_trades: usize,
+    pub winning_trades: usize,
+    pub losing_trades: usize,
+    pub trades: Vec<TradeExecution>,
 }
 
-impl<'a> BacktestRequest<'a> {
-    pub fn new(config: &'a BotConfig, initial_cash: f64, samples: &'a [PriceSample]) -> Self {
-        Self {
-            config,
-            initial_cash,
-            samples,
-        }
+#[derive(Debug, Clone)]
+pub struct TradeExecution {
+    pub timestamp: DateTime<Utc>,
+    pub asset: String,
+    pub side: String,
+    pub quantity: f64,
+    pub price: f64,
+    pub fee: f64,
+    pub pnl: f64,
+}
+
+#[derive(Debug, Clone)]
+pub struct PriceSample {
+    pub timestamp: DateTime<Utc>,
+    pub price: f64,
+}
+
+impl PriceSample {
+    pub fn new(timestamp: DateTime<Utc>, price: f64) -> Self {
+        Self { timestamp, price }
     }
 }
 
-pub trait BacktestEngine {
-    fn run(&self, request: BacktestRequest<'_>) -> Result<BacktestResult>;
-}
-
-pub(crate) fn run_core_backtest(
+pub fn run_ema_backtest(
     config: &BotConfig,
     initial_cash: f64,
-    samples: &[PriceSample],
+    prices: &[(DateTime<Utc>, f64)],
 ) -> Result<BacktestResult> {
-    execute_backtest(config, initial_cash, samples)
+    ema::run_backtest(config, initial_cash, prices)
 }
